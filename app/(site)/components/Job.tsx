@@ -7,7 +7,7 @@ import { formatDate } from "../lib/date";
 
 export default async function Job() {
   const job: JobType[] = await getJob();
-
+  console.log(job);
   return (
     <section className="mt-32">
       <div className="mb-16">

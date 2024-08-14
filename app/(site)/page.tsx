@@ -42,7 +42,7 @@ export default async function Home() {
         {/* <HeroSvg /> */}
         <iframe
           src="https://lottie.host/embed/6a014311-9032-407d-b556-40be81bddf29/F6UjV0cL6p.json"
-          className="h-[400px] w-[400px]"
+          className="h-[400px] w-[400px] hidden md:block"
         ></iframe>
       </section>
       <Job />
