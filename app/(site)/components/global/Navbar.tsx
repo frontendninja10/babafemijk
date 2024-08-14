@@ -8,7 +8,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <Link href="/">
           {/* <Image src={Logo} width={25} height={25} alt="logo" /> */}
-          <h2 className="font-bold text-lg">BJK</h2>
+          <h2 className="font-bold text-lg text-[#161960]">BJK</h2>
         </Link>
         <nav>
           <ul className="flex items-center gap-x-8">
