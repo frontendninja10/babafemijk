@@ -4,18 +4,18 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <header className="py-6 md:px-16 px-6 border-b border-slate-200 z-30 md:mb-28 mb-20">
+    <nav className="py-6 md:px-24 px-6 border-b border-zinc-300 z-30 md:mb-28 mb-20">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <Link href="/">
           {/* <Image src={Logo} width={25} height={25} alt="logo" /> */}
           <h2 className="font-bold text-lg text-[#161960]">BJK</h2>
         </Link>
-        <nav>
+        <div>
           <ul className="flex items-center gap-x-8">
             <li>
               <Link
                 href="/about"
-                className="hover:text-purple-400 duration-300"
+                className="hover:text-[#161960] duration-200 hover:underline"
               >
                 About
               </Link>
@@ -23,14 +23,30 @@ export default function Navbar() {
             <li>
               <Link
                 href="/projects"
-                className="hover:text-purple-400 duration-300"
+                className="hover:text-[#161960] duration-200 hover:underline"
               >
                 Projects
               </Link>
             </li>
+            <li>
+              <Link
+                href="/"
+                className="hover:text-[#161960] duration-200 hover:underline"
+              >
+                Quotes
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className="hover:text-[#161960] duration-200 hover:underline"
+              >
+                Blog
+              </Link>
+            </li>
           </ul>
-        </nav>
+        </div>
       </div>
-    </header>
+    </nav>
   );
 }

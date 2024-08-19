@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../globals.css";
-import Navbar from "./components/global/Navbar";
-import Footer from "./components/global/Footer";
+import "./globals.css";
+import Navbar from "@/components/global/Navbar";
+import Footer from "@/components/global/Footer";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={GeistMono.className}>
+      <body className={`${GeistMono.className} bg-slate-100`}>
         <Navbar />
         {children}
         <Footer />
