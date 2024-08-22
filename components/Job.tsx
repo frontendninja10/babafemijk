@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getJob } from "@/sanity/sanity.query";
 import type { JobType } from "@/types";
 import { formatDate } from "@/lib/date";
+import { GeistSans } from "geist/font/sans";
 
 export const revalidate = 10;
 
@@ -65,7 +66,7 @@ export default async function Job() {
                     </span>
                   )}
                 </time>
-                <p className="text-base text-slate-400 my-4">
+                <p className={`text-base text-slate-500 my-4`}>
                   {data.description}
                 </p>
               </div>

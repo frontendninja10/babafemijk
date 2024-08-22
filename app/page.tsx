@@ -7,7 +7,7 @@ import Job from "@/components/Job";
 import { socialLinks } from "../lib/data/social-links";
 import Link from "next/link";
 
-// export const revalidate = 10;
+export const revalidate = 10;
 
 export default async function Home() {
   const profile: ProfileType[] = await getProfile();
@@ -21,7 +21,7 @@ export default async function Home() {
               <h1 className="text-3xl font-bold text-[#161960] tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight lg:min-w-[700px] min-w-full">
                 {data.headline}
               </h1>
-              <p className="text-base text-slate-400 leading-relaxed">
+              <p className="text-base text-slate-500 leading-relaxed">
                 {data.shortBio}
               </p>
               <ul className="flex items-center flex-wrap gap-x-5 gap-y-4 my-10">
@@ -34,7 +34,7 @@ export default async function Home() {
                         className="flex items-center border-b dark:border-b-zinc-800 border-zinc-200 group"
                       >
                         <value.icon
-                          className="flex-shrink-0 h-5 w-5 text-zinc-500 group-hover:dark:text-white group-hover:text-zinc-800 duration-300"
+                          className="flex-shrink-0 h-5 w-5 text-slate-500 group-hover:dark:text-white group-hover:text-zinc-800 duration-300"
                           aria-hidden="true"
                         />{" "}
                         &nbsp;

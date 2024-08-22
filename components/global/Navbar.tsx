@@ -10,7 +10,7 @@ export default function Navbar() {
           {/* <Image src={Logo} width={25} height={25} alt="logo" /> */}
           <h2 className="font-bold text-lg text-[#161960]">BJK</h2>
         </Link>
-        <div>
+        <div className="lg:block hidden">
           <ul className="flex items-center gap-x-8">
             <li>
               <Link
