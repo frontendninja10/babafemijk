@@ -15,7 +15,7 @@ import {
 
 export default function Navbar() {
   return (
-    <nav className="py-6 md:px-24 px-6 border-b border-zinc-300 z-30 md:mb-28 mb-20">
+    <nav className="py-6 px-6 border-b border-zinc-300 z-30 md:mb-28 mb-20">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <Link href="/">
           {/* <Image src={Logo} width={25} height={25} alt="logo" /> */}
