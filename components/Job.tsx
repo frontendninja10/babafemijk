@@ -9,6 +9,7 @@ export const revalidate = 10;
 export default async function Job() {
   const job: JobType[] = await getJob();
   console.log(job);
+
   return (
     <section className="mt-32">
       <div className="mb-16">
@@ -19,24 +20,10 @@ export default async function Job() {
 
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-12 gap-y-10">
         {job.map((data, index) => {
-          const isLastItemInFirstColumn =
-            index === job.length - 2 && job.length % 2 === 0;
-          const isLastItemInSecondColumn =
-            index === job.length - 1 && job.length % 2 !== 0;
-
-          const isLastItem =
-            index === job.length - 1 ||
-            isLastItemInFirstColumn ||
-            isLastItemInSecondColumn;
-
           return (
             <div
               key={data._id}
-              className={`flex items-start lg:gap-x-6 gap-x-4 max-w-2xl relative ${
-                !isLastItem
-                  ? "before:absolute before:bottom-0 before:top-[5rem] before:left-10 before:w-[1px] before:h-[calc(100%-70px)] before:bg-zinc-300"
-                  : ""
-              }`}
+              className="flex items-start lg:gap-x-6 gap-x-4 max-w-2xl relative before:absolute before:bottom-0 before:top-[5rem] before:left-9 before:w-[1px] before:h-[calc(100%-70px)] dark:before:bg-zinc-800 before:bg-zinc-200"
             >
               <a
                 href={data.url}

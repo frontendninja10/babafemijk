@@ -6,8 +6,7 @@ import type { ProfileType } from "@/types";
 import Job from "@/components/Job";
 import { socialLinks } from "../lib/data/social-links";
 import Link from "next/link";
-
-export const revalidate = 10;
+import HeroSvg from "@/components/HeroSvg";
 
 export default async function Home() {
   const profile: ProfileType[] = await getProfile();
@@ -18,7 +17,7 @@ export default async function Home() {
         {profile &&
           profile.map((data) => (
             <div key={data._id} className="max-w-2xl md:ml-[-40px]">
-              <h1 className="text-3xl font-bold text-[#161960] tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight lg:min-w-[700px] min-w-full">
+              <h1 className="text-3xl font-bold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight lg:min-w-[700px] min-w-full">
                 {data.headline}
               </h1>
               <p className="text-base text-slate-500 leading-relaxed">
@@ -49,14 +48,15 @@ export default async function Home() {
           src="https://lottie.host/embed/6a014311-9032-407d-b556-40be81bddf29/F6UjV0cL6p.json"
           className="h-[400px] w-[400px] hidden md:block"
         ></iframe> */}
-        <iframe
+        {/* <iframe
           src="https://lottie.host/embed/4ca0d940-8801-4831-966d-cd9782e8e764/MkPxXOliKK.json"
           className="h-[300px] w-[300px] hidden lg:block"
-        ></iframe>
+        ></iframe> */}
         {/* <iframe
           src="https://lottie.host/embed/03457115-aff1-445a-90fa-223fc223c1b9/XYL00T4udn.json"
           className="h-[350px] w-[350px] hidden md:block"
         ></iframe> */}
+        <HeroSvg />
       </section>
       <Job />
     </main>
