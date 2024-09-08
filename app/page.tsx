@@ -1,5 +1,3 @@
-// app/page.tsx
-
 import Job from "@/components/Job";
 import Header from "@/components/Header";
 

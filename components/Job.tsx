@@ -4,11 +4,11 @@ import type { JobType } from "@/types";
 import { formatDate } from "@/lib/date";
 import { GeistSans } from "geist/font/sans";
 
-export const revalidate = 10;
+// export const revalidate = 10;
 
 export default async function Job() {
   const job: JobType[] = await getJob();
-  console.log(job);
+  // console.log(job);
 
   return (
     <section className="mt-32 max-w-6xl mx-auto">
