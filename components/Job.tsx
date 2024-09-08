@@ -11,7 +11,7 @@ export default async function Job() {
   console.log(job);
 
   return (
-    <section className="mt-32">
+    <section className="mt-32 max-w-6xl mx-auto">
       <div className="mb-16">
         <h2 className="font-semibold text-4xl mb-4 text-[#161960]">
           Work Experience

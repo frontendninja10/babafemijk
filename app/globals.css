@@ -67,3 +67,29 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.hero-svg .hero-icon {
+  animation: float 4s ease-in-out infinite;
+}
+
+.hero-svg .hero-icon-1 {
+  animation-delay: 0s;
+}
+
+.hero-svg .hero-icon-2 {
+  animation-delay: -1.3s;
+}
+
+.hero-svg .hero-icon-3 {
+  animation-delay: -2.6s;
+}
