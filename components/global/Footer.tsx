@@ -6,7 +6,7 @@ export default function Footer() {
           All rights reserved &copy; {new Date().getFullYear()}
         </small>
 
-        <small className="hover:text-white duration-200">
+        <small>
           <a
             href="https://github.com/Evavic44/sanity-nextjs-site"
             target="_blank"
