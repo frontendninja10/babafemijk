@@ -11,9 +11,9 @@ export default async function Job() {
   // console.log(job);
 
   return (
-    <section className="mt-32 max-w-6xl mx-auto">
+    <section className="lg:mt-28 mt-16 px-6 max-w-6xl mx-auto">
       <div className="mb-16">
-        <h2 className="font-semibold text-4xl mb-4 text-[#161960]">
+        <h2 className="font-semibold lg:text-4xl text-3xl mb-4 text-[#212A37]">
           Work Experience
         </h2>
       </div>

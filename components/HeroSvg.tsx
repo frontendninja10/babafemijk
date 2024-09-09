@@ -8,7 +8,7 @@ export default function HeroSvg() {
       viewBox="0 0 377 150"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="hero-svg"
+      className="hero-svg w-full h-auto lg:max-w-[377px] max-w-[320px]"
     >
       <g className="hero-icon hero-icon-1">
         <path

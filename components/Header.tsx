@@ -11,7 +11,7 @@ export default async function Header() {
       {profile &&
         profile.map((data) => (
           <div key={data._id} className="max-w-2xl">
-            <h1 className="text-3xl font-bold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight lg:min-w-[700px] min-w-full">
+            <h1 className="text-3xl text-[#212A37] font-bold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight lg:min-w-[700px] min-w-full">
               {data.headline}
             </h1>
             <p className="text-base text-slate-500 leading-relaxed">
@@ -38,7 +38,9 @@ export default async function Header() {
             </ul>
           </div>
         ))}
-      <HeroSvg />
+      <div className="lg:max-w-[377px] max-w-[320px] self-center">
+        <HeroSvg />
+      </div>
     </header>
   );
 }
