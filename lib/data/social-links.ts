@@ -40,7 +40,7 @@ export const socialLinks = [
   {
     id: 4,
     name: "Instagram",
-    url: "https://instagram.com/victorekea",
+    url: "https://www.instagram.com/babafemij_k",
     icon: BiLogoInstagram,
     status: "social",
   },
@@ -48,7 +48,7 @@ export const socialLinks = [
   {
     id: 5,
     name: "Hashnode",
-    url: "https://eke.hashnode.dev",
+    url: "https://babafemijk.hashnode.dev/",
     icon: FaHashnode,
     status: "social",
   },
