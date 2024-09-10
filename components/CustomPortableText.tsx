@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const CustomPortableText: PortableTextComponents = {
   block: {
-    normal: ({ children }) => <p className="mt-2 mb-6">{children}</p>,
+    normal: ({ children }) => <p className="mt-2 mb-0">{children}</p>,
     h2: ({ children }) => (
       <h2
         id={children // TODO: Export slugify code to reusable function
@@ -14,7 +14,7 @@ export const CustomPortableText: PortableTextComponents = {
           .replaceAll(/[^-\w]+/g, "-")
           .replaceAll(/--+/g, "-")
           .replace(/^-|-$/g, "")}
-        className="before:content-['#'] before:hidden hover:before:sm:inline-block hover:before:hidden before:absolute lg:before:-left-5 before:-left-4 lg:before:text-2xl before:text-xl block before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative font-bold tracking-tight dark:text-zinc-100 lg:text-4xl text-3xl text-zinc-700"
+        className="before:content-['#'] before:hidden hover:before:sm:inline-block hover:before:hidden before:absolute lg:before:-left-5 before:-left-4 lg:before:text-2xl before:text-xl block before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative font-bold tracking-tight dark:text-zinc-100 lg:text-3xl text-2xl text-zinc-700"
       >
         <HashScroll text={children} />
       </h2>
@@ -82,7 +82,7 @@ export const CustomPortableText: PortableTextComponents = {
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-[square] mt-5 ml-5">{children}</ul>
+      <ul className="list-[square] mt-0 ml-5">{children}</ul>
     ),
     number: ({ children }) => (
       <ol className="list-decimal mt-5 ml-5">{children}</ol>
