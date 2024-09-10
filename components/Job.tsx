@@ -10,6 +10,12 @@ export default async function Job() {
   const job: JobType[] = await getJob();
   console.log(job);
 
+  const sortedJobs = job.sort((a, b) => {
+    if (!a.endDate) return -1; // Current job (no end date) comes first
+    if (!b.endDate) return 1; // Current job (no end date) comes first
+    return new Date(b.endDate).getTime() - new Date(a.endDate).getTime();
+  });
+
   return (
     <section className="lg:mt-28 mt-16 px-6 max-w-6xl mx-auto">
       <div className="mb-16">
@@ -19,7 +25,7 @@ export default async function Job() {
       </div>
 
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-12 gap-y-10">
-        {job.map((data, index) => {
+        {sortedJobs.map((data, index) => {
           return (
             <div
               key={data._id}
@@ -28,7 +34,7 @@ export default async function Job() {
               <a
                 href={data.url}
                 rel="noreferrer noopener"
-                className="min-h-[80px] min-w-[80px] rounded-md overflow-clip relative grid place-items-center p-2 bg-slate-100"
+                className="min-h-[60px] min-w-[60px] rounded-md overflow-clip relative grid place-items-center p-2 bg-zinc-100"
               >
                 <Image
                   src={data.logo}

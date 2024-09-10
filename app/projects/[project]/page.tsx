@@ -15,7 +15,7 @@ type Props = {
   };
 };
 
-export const revalidate = 10;
+// export const revalidate = 10;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -64,7 +64,7 @@ export default async function Project({ params }: Props) {
           />
         </div>
 
-        <div className="flex flex-col gap-y-6 mt-8 leading-7 text-zinc-500">
+        <div className="flex flex-col gap-y-6 mt-8 leading-7 text-slate-500">
           <PortableText
             value={project.description}
             components={CustomPortableText}
