@@ -20,7 +20,7 @@ export default function Navbar() {
   const closeDrawer = () => setIsOpen(false);
 
   return (
-    <nav className="py-6 px-6 border-b border-zinc-300 z-30 md:mb-28 mb-20">
+    <nav className="py-6 px-6 border-b border-zinc-300 z-30 lg:mb-28 mb-16">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <Link href="/">
           {/* <Image src={Logo} width={25} height={25} alt="logo" /> */}
