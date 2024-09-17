@@ -8,6 +8,7 @@ import { PortableText } from "@portabletext/react";
 import { BiLinkExternal } from "react-icons/bi";
 import { CustomPortableText } from "@/components/CustomPortableText";
 import { GeistSans } from "geist/font/sans";
+import { SanityClient } from "sanity";
 // import fallBackImage from "@/public/project.png";
 
 type Props = {
@@ -16,7 +17,7 @@ type Props = {
   };
 };
 
-// export const revalidate = 10;
+export const revalidate = 10;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
