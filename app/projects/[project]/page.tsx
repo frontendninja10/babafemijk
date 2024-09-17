@@ -65,7 +65,7 @@ export default async function Project({ params }: Props) {
           />
         </div>
 
-        <div className="flex flex-col gap-y-6 mt-8 leading-7 text-justify text-slate-500">
+        <div className="flex flex-col gap-y-6 mt-8 leading-7 lg:text-justify text-start text-slate-500">
           <PortableText
             value={project.description}
             components={CustomPortableText}
