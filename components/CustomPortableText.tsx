@@ -3,7 +3,7 @@ import { BiLinkExternal, BiSolidQuoteRight } from "react-icons/bi";
 import HashScroll from "./HashScroll";
 import Link from "next/link";
 import PortableImage from "./PortableImage";
-import { Link as LucideLink } from "lucide-react";
+// import { Link as LucideLink } from "lucide-react";
 
 export const CustomPortableText: PortableTextComponents = {
   types: {
@@ -76,7 +76,7 @@ export const CustomPortableText: PortableTextComponents = {
           className="dark:text-blue-400 text-blue-400 hover:underline"
         >
           {children}{" "}
-          <LucideLink className="inline w-4 h-4" aria-hidden="true" />
+          {/* <LucideLink className="inline w-4 h-4" aria-hidden="true" /> */}
           {/* {children} <BiLinkExternal className="inline" aria-hidden="true" /> */}
         </Link>
       );
