@@ -3,7 +3,7 @@ import { defineField } from "sanity";
 
 const project = {
   name: "project",
-  title: "Project",
+  title: "Projects",
   description: "Project Schema",
   type: "document",
   icon: BiPackage,
@@ -20,15 +20,14 @@ const project = {
       type: "string",
       validation: (rule) => rule.max(60).required(),
     }),
-    defineField({
+    {
       name: "slug",
       title: "Slug",
       type: "slug",
       description:
         "Add a custom slug for the URL or generate one from the name",
       options: { source: "name" },
-      validation: (rule) => rule.required(),
-    }),
+    },
     {
       name: "logo",
       title: "Project Logo",
@@ -38,13 +37,24 @@ const project = {
       name: "projectUrl",
       title: "Project URL",
       type: "url",
+      description: "Leaving this URL blank will add a coming soon to the link.",
+    },
+    {
+      name: "repository",
+      title: "Repository URL",
+      type: "url",
+      description:
+        'Leaving this URL blank will add a "No Repository" message to the link.',
     },
     {
       name: "coverImage",
       title: "Cover Image",
       type: "image",
       description: "Upload a cover image for this project",
-      options: { hotspot: true },
+      options: {
+        hotspot: true,
+        metadata: ["lqip"],
+      },
       fields: [
         {
           name: "alt",
@@ -53,13 +63,12 @@ const project = {
         },
       ],
     },
-    {
+    defineField({
       name: "description",
       title: "Description",
-      type: "array",
+      type: "blockContent",
       description: "Write a full description about this project",
-      of: [{ type: "block" }],
-    },
+    }),
   ],
 };
 
