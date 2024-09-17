@@ -7,6 +7,7 @@ import type { ProjectType } from "@/types";
 import { PortableText } from "@portabletext/react";
 import { BiLinkExternal } from "react-icons/bi";
 import { CustomPortableText } from "@/components/CustomPortableText";
+import { GeistSans } from "geist/font/sans";
 // import fallBackImage from "@/public/project.png";
 
 type Props = {
@@ -15,7 +16,7 @@ type Props = {
   };
 };
 
-// export const revalidate = 10;
+export const revalidate = 10;
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -38,7 +39,7 @@ export default async function Project({ params }: Props) {
   const project: ProjectType = await getSingleProject(slug);
 
   return (
-    <main className="max-w-6xl mx-auto lg:px-16 px-8">
+    <main className={`${GeistSans.className} max-w-6xl mx-auto lg:px-16 px-8`}>
       <div className="max-w-3xl mx-auto">
         <div className="flex items-start justify-between mb-4">
           <h1 className="font-extrabold lg:text-5xl text-3xl lg:leading-tight mb-4 tracking-tight">
@@ -64,7 +65,7 @@ export default async function Project({ params }: Props) {
           />
         </div>
 
-        <div className="flex flex-col gap-y-6 mt-8 leading-7 text-slate-500">
+        <div className="flex flex-col gap-y-6 mt-8 leading-7 text-justify text-slate-500">
           <PortableText
             value={project.description}
             components={CustomPortableText}

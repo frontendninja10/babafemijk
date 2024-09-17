@@ -2,10 +2,15 @@ import { PortableTextComponents } from "@portabletext/react";
 import { BiLinkExternal, BiSolidQuoteRight } from "react-icons/bi";
 import HashScroll from "./HashScroll";
 import Link from "next/link";
+import PortableImage from "./PortableImage";
+import { Link as LucideLink } from "lucide-react";
 
 export const CustomPortableText: PortableTextComponents = {
+  types: {
+    image: PortableImage,
+  },
   block: {
-    normal: ({ children }) => <p className="mt-2 mb-0">{children}</p>,
+    normal: ({ children }) => <p className="mt-0 mb-0">{children}</p>,
     h2: ({ children }) => (
       <h2
         id={children // TODO: Export slugify code to reusable function
@@ -68,9 +73,11 @@ export const CustomPortableText: PortableTextComponents = {
       return (
         <Link
           href={value?.href}
-          className="dark:text-blue-400 text-blue-500 hover:underline"
+          className="dark:text-blue-400 text-blue-400 hover:underline"
         >
-          {children} <BiLinkExternal className="inline" aria-hidden="true" />
+          {children}{" "}
+          <LucideLink className="inline w-4 h-4" aria-hidden="true" />
+          {/* {children} <BiLinkExternal className="inline" aria-hidden="true" /> */}
         </Link>
       );
     },
