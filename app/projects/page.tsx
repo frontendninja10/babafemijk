@@ -4,22 +4,35 @@ import Image from "next/image";
 import Link from "next/link";
 import { getProjects } from "@/sanity/sanity.query";
 import type { ProjectType } from "@/types";
+import { GeistSans } from "geist/font/sans";
+import { Open_Sans } from "next/font/google";
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+// export const revalidate = 10;
 
 export default async function Project() {
   const projects: ProjectType[] = await getProjects();
 
   return (
-    <main className="max-w-7xl mx-auto md:px-16 px-6">
+    <main className={`max-w-7xl mx-auto md:px-16 px-6 ${openSans.className}`}>
       <section className="max-w-2xl mb-16">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight">
+        <h1
+          className={`${openSans.className} text-[#1d2f6f] text-3xl font-bold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight`}
+        >
           Welcome to my Projects Showcase
         </h1>
-        <p className="text-base text-zinc-400 leading-relaxed">
-          I&apos;ve worked on tons of little projects over the years but these
-          are the ones that I&apos;m most proud of. Many of them are
-          open-source, so if you see something that piques your interest, check
-          out the code and contribute if you have ideas for how it can be
-          improved.
+        <p
+          className={`${openSans.className} text-base text-slate-500 leading-relaxed`}
+        >
+          Here you&apos;ll find a curated selection of projects that represent
+          my best work and showcase my skills as a developer. From fintech
+          solutions to crypto platforms, each project reflects my passion for
+          creating innovative and impactful software. Feel free to explore, and
+          if you have any questions, don&apos;t hesitate to reach out!
         </p>
       </section>
 
@@ -28,18 +41,27 @@ export default async function Project() {
           <Link
             href={`/projects/${project.slug}`}
             key={project._id}
-            className="flex items-center gap-x-4 bg-slate-100 border border-transparent hover:border-zinc-700 p-4 rounded-lg ease-in-out"
+            className="group flex items-center gap-x-4 bg-gradient-to-br from-white to-slate-50 border-2 border-slate-200 hover:border-indigo-300 p-4 rounded-xl transition-all duration-300 ease-in-out hover:shadow-md"
           >
-            <Image
-              src={project.logo}
-              width={60}
-              height={60}
-              alt={project.name}
-              className="bg-slate-200 rounded-md p-2"
-            />
+            <div className="relative w-[60px] h-[60px]">
+              {/* <div className="absolute inset-0 bg-slate-100 rounded-lg transform -rotate-6 transition-transform group-hover:rotate-3"></div> */}
+              <div className="absolute inset-0 transform -rotate-6 transition-transform group-hover:rotate-3">
+                <Image
+                  src={project.logo}
+                  layout="fill"
+                  objectFit="contain"
+                  alt={project.name}
+                  className="rounded-lg"
+                />
+              </div>
+            </div>
             <div>
-              <h2 className="font-semibold mb-1">{project.name}</h2>
-              <div className="text-sm text-zinc-400">{project.tagline}</div>
+              <h2 className="font-bold text-lg text-slate-800 mb-1">
+                {project.name}
+              </h2>
+              <div className={`${openSans.className} text-sm text-slate-600`}>
+                {project.tagline}
+              </div>
             </div>
           </Link>
         ))}

@@ -5,6 +5,12 @@ import Navbar from "@/components/global/Navbar";
 import Footer from "@/components/global/Footer";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import { Open_Sans } from "next/font/google";
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Babafemi JK | Frontend Engineer",
@@ -18,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${GeistMono.className} bg-slate-100`}>
+      <body className={`${openSans.className} bg-slate-100`}>
         <Navbar />
         {children}
         <Footer />

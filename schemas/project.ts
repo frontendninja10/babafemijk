@@ -18,7 +18,7 @@ const project = {
       name: "tagline",
       title: "Tagline",
       type: "string",
-      validation: (rule) => rule.max(60).required(),
+      validation: (rule) => rule.max(100).required(),
     }),
     {
       name: "slug",

@@ -8,7 +8,7 @@ export const revalidate = 10;
 
 export default async function Job() {
   const job: JobType[] = await getJob();
-  console.log(job);
+  // console.log(job);c
 
   const sortedJobs = job.sort((a, b) => {
     if (!a.endDate) return -1; // Current job (no end date) comes first
@@ -17,7 +17,7 @@ export default async function Job() {
   });
 
   return (
-    <section className="lg:mt-28 mt-16 px-6 max-w-6xl mx-auto">
+    <section className="lg:mt-28 mt-16 max-w-6xl mx-auto">
       <div className="mb-16">
         <h2 className="font-semibold lg:text-4xl text-3xl mb-4 text-[#212A37]">
           Work Experience
@@ -59,7 +59,7 @@ export default async function Job() {
                     </span>
                   )}
                 </time>
-                <p className={`text-base text-slate-500 my-4`}>
+                <p className={`text-base text-slate-500 my-4 leading-relaxed`}>
                   {data.description}
                 </p>
               </div>
