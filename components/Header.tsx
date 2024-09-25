@@ -19,7 +19,7 @@ export default async function Header() {
         profile.map((data) => (
           <div key={data._id} className="max-w-2xl">
             <h1
-              className={`${GeistSans.className} text-4xl text-[#1d2f6f] font-semibold tracking-normal lg:text-6xl mb-6 lg:leading-20 lg:min-w-[400px] min-w-full`}
+              className={`${GeistSans.className} text-4xl text-[#1d2f6f] font-semibold tracking-normal lg:text-5xl mb-6 lg:leading-20 lg:min-w-[400px] min-w-full`}
             >
               {/* {data.headline} */}
               {/* <span className="bg-gradient-to-r from-[#21b1ff] to-[#ff218c] bg-clip-text text-transparent">
@@ -36,7 +36,7 @@ export default async function Header() {
               href={`${data.resumeURL}?dl=${data.fullName}_resume`}
               download
             >
-              <button className="bg-[#1d2f6f] text-white px-4 py-2 rounded-md">
+              <button className="bg-[#1d2f6f] text-white px-4 py-3">
                 Download Resume
               </button>
             </Link>

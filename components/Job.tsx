@@ -1,14 +1,19 @@
 import Image from "next/image";
-import { getJob } from "@/sanity/sanity.query";
+// import { getJob } from "@/sanity/sanity.query";
+import { sanityFetch } from "@/sanity/sanity.client";
 import type { JobType } from "@/types";
 import { formatDate } from "@/lib/date";
 import { GeistSans } from "geist/font/sans";
+import { jobQuery } from "@/sanity/sanity.query";
 
-export const revalidate = 10;
+// export const revalidate = 10;
 
 export default async function Job() {
-  const job: JobType[] = await getJob();
-  // console.log(job);c
+  const job: JobType[] = await sanityFetch({
+    query: jobQuery,
+    tags: ["job"],
+  });
+  console.log(job);
 
   const sortedJobs = job.sort((a, b) => {
     if (!a.endDate) return -1; // Current job (no end date) comes first
