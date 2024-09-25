@@ -32,7 +32,7 @@ export default async function Header() {
             >
               {data.shortBio}
             </p>
-            <Link href={`${data.resumeURL}?dl=${data.fullName}_resume`}>
+            <Link href={`${data.resumeURL}?dl=${data.fullName}_resume.pdf`}>
               <button className="bg-[#1d2f6f] text-white px-4 py-3">
                 Download Resume
               </button>
