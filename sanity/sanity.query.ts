@@ -36,6 +36,17 @@ export async function getJob() {
   );
 }
 
+export const jobQuery = groq`*[_type == "job"] | order(_createdAt desc){
+  _id,
+  name,
+  jobTitle,
+  "logo": logo.asset->url,
+  url,
+  description,
+  startDate,
+  endDate,
+}`;
+
 export async function getProjects() {
   return client.fetch(
     groq`*[_type == "project"]{
@@ -61,3 +72,17 @@ export async function getSingleProject(slug: string) {
     { slug }
   );
 }
+
+export const singleProjectQuery = groq`*[_type == "project" && slug.current == $slug][0]{
+  _id,
+  name,
+  projectUrl,
+  repository,
+  coverImage {
+    "image": asset->url,
+    "lqip": asset->metadata.lqip,
+    alt,
+  },
+  tagline,
+  description
+}`;

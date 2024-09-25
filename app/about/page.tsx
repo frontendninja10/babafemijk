@@ -10,7 +10,7 @@ export default async function About() {
   const profile: ProfileType[] = await getProfile();
 
   return (
-    <main className="lg:max-w-7xl mx-auto max-w-3xl md:px-16 px-6">
+    <main className="lg:max-w-7xl mx-auto max-w-3xl md:px-16 px-6 lg:mt-44 mt-32">
       {profile &&
         profile.map((data) => (
           <div key={data._id}>

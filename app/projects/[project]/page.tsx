@@ -8,7 +8,8 @@ import { PortableText } from "@portabletext/react";
 import { BiLinkExternal } from "react-icons/bi";
 import { CustomPortableText } from "@/components/CustomPortableText";
 import { GeistSans } from "geist/font/sans";
-import { SanityClient } from "sanity";
+import { sanityFetch } from "@/sanity/sanity.client";
+import { singleProjectQuery } from "@/sanity/sanity.query";
 // import fallBackImage from "@/public/project.png";
 
 type Props = {
@@ -37,10 +38,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Project({ params }: Props) {
   const slug = params.project;
-  const project: ProjectType = await getSingleProject(slug);
+  const project: ProjectType = await sanityFetch({
+    query: singleProjectQuery,
+    tags: ["project"],
+    qParams: { slug },
+  });
 
   return (
-    <main className={`${GeistSans.className} max-w-6xl mx-auto lg:px-16 px-8`}>
+    <main
+      className={`${GeistSans.className} max-w-6xl mx-auto lg:px-16 px-8 lg:mt-44 mt-32`}
+    >
       <div className="max-w-3xl mx-auto">
         <div className="flex items-start justify-between mb-4">
           <h1 className="font-extrabold lg:text-5xl text-3xl lg:leading-tight mb-4 tracking-tight">
