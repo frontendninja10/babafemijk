@@ -5,9 +5,16 @@ import { getProfile } from "@/sanity/sanity.query";
 import type { ProfileType } from "@/types";
 import { PortableText } from "@portabletext/react";
 import { BiEnvelope, BiFile } from "react-icons/bi";
+import { profileQuery } from "@/sanity/sanity.query";
+import { sanityFetch } from "@/sanity/sanity.client";
 
 export default async function About() {
-  const profile: ProfileType[] = await getProfile();
+  const profile: ProfileType[] = await sanityFetch({
+    query: profileQuery,
+    tags: ["profile"],
+  });
+
+  console.log(profile);
 
   return (
     <main className="lg:max-w-7xl mx-auto max-w-3xl md:px-16 px-6 lg:mt-44 mt-32">
@@ -16,7 +23,7 @@ export default async function About() {
           <div key={data._id}>
             <section className="grid lg:grid-cols-2 grid-cols-1 gap-x-6 justify-items-center">
               <div className="order-2 lg:order-none">
-                <h1 className="lg:text-5xl text-4xl lg:leading-tight basis-1/2 font-bold mb-8">
+                <h1 className="lg:text-5xl text-4xl lg:leading-tight basis-1/2 font-bold mb-8 text-[#1d2f6f]">
                   I&apos;m {data.fullName}. I live in {data.location}, where I
                   design the future.
                 </h1>
@@ -38,8 +45,8 @@ export default async function About() {
                   />
 
                   <a
-                    href={`${data.resumeURL}?dl=${data.fullName}_resume`}
-                    className="flex items-center justify-center gap-x-2 bg-[#1d1d20] border border-transparent hover:border-zinc-700 rounded-md duration-200 py-2 text-center cursor-cell font-medium"
+                    href={`${data.resumeURL}?dl=${data.fullName}_resume.pdf`}
+                    className="flex items-center justify-center gap-x-2 bg-[#1d2f6f] text-white border border-transparent hover:border-zinc-700 rounded-md duration-200 py-2 text-center font-medium"
                   >
                     <BiFile className="text-base" /> Download Resumé
                   </a>
@@ -67,7 +74,7 @@ export default async function About() {
               </p>
 
               <ul className="flex flex-wrap items-center gap-3 mt-8">
-                {data.skills.map((skill, id) => (
+                {data.skills?.map((skill, id) => (
                   <li
                     key={id}
                     className="bg-[#1d1d20] border border-transparent hover:border-zinc-700 rounded-md px-2 py-1"
