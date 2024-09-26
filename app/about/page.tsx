@@ -7,6 +7,12 @@ import { PortableText } from "@portabletext/react";
 import { BiEnvelope, BiFile } from "react-icons/bi";
 import { profileQuery } from "@/sanity/sanity.query";
 import { sanityFetch } from "@/sanity/sanity.client";
+import { Open_Sans } from "next/font/google";
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 export default async function About() {
   const profile: ProfileType[] = await sanityFetch({
@@ -18,8 +24,7 @@ export default async function About() {
 
   return (
     <main
-      className="lg:max-w-7xl mx-auto max-w-3xl md:px-16 px-6 lg:mt-44 mt-32"
-      style={{ fontFamily: "Open Sans" }}
+      className={`lg:max-w-7xl mx-auto max-w-3xl md:px-16 px-6 lg:mt-44 mt-32 ${openSans.className}`}
     >
       {profile &&
         profile.map((data) => (
