@@ -13,7 +13,6 @@ export default async function Job() {
     query: jobQuery,
     tags: ["job"],
   });
-  console.log(job);
 
   const sortedJobs = job.sort((a, b) => {
     if (!a.endDate) return -1; // Current job (no end date) comes first
@@ -24,7 +23,7 @@ export default async function Job() {
   return (
     <section className="lg:mt-28 mt-16 max-w-6xl mx-auto">
       <div className="mb-16">
-        <h2 className="font-semibold lg:text-4xl text-3xl mb-4 text-[#212A37]">
+        <h2 className="font-semibold lg:text-4xl text-3xl mb-4 text-[#1d2f6f]">
           Work Experience
         </h2>
       </div>

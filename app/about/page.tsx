@@ -17,7 +17,10 @@ export default async function About() {
   console.log(profile);
 
   return (
-    <main className="lg:max-w-7xl mx-auto max-w-3xl md:px-16 px-6 lg:mt-44 mt-32">
+    <main
+      className="lg:max-w-7xl mx-auto max-w-3xl md:px-16 px-6 lg:mt-44 mt-32"
+      style={{ fontFamily: "Open Sans" }}
+    >
       {profile &&
         profile.map((data) => (
           <div key={data._id}>
@@ -28,7 +31,7 @@ export default async function About() {
                   design the future.
                 </h1>
 
-                <div className="flex flex-col gap-y-3 text-zinc-400 leading-relaxed">
+                <div className="flex flex-col gap-y-3 text-slate-600 leading-relaxed">
                   <PortableText value={data.fullBio} />
                 </div>
               </div>
@@ -46,7 +49,7 @@ export default async function About() {
 
                   <a
                     href={`${data.resumeURL}?dl=${data.fullName}_resume.pdf`}
-                    className="flex items-center justify-center gap-x-2 bg-[#1d2f6f] text-white border border-transparent hover:border-zinc-700 rounded-md duration-200 py-2 text-center font-medium"
+                    className="flex items-center justify-center gap-x-2 border-2 border-[#1d2f6f] hover:bg-[#1d2f6f] hover:text-white rounded-md duration-200 py-2 text-center text-[#1d2f6f] font-semibold"
                   >
                     <BiFile className="text-base" /> Download Resumé
                   </a>
@@ -67,17 +70,19 @@ export default async function About() {
             </section>
 
             <section className="mt-24 max-w-2xl">
-              <h2 className="font-semibold text-4xl mb-4">Expertise</h2>
-              <p className="text-zinc-400 max-w-lg">
+              <h2 className="font-semibold text-4xl mb-4 text-[#1d2f6f]">
+                Technologies
+              </h2>
+              <p className="text-slate-600 max-w-lg">
                 I&apos;ve spent few years working on my skills. In no particular
                 order, here are a few of them.
               </p>
 
-              <ul className="flex flex-wrap items-center gap-3 mt-8">
+              <ul className="flex flex-wrap max-w-lg items-center gap-3 mt-8">
                 {data.skills?.map((skill, id) => (
                   <li
                     key={id}
-                    className="bg-[#1d1d20] border border-transparent hover:border-zinc-700 rounded-md px-2 py-1"
+                    className="bg-[#1d2f6f] border border-transparent text-white hover:border-zinc-700 rounded-md px-2 py-1"
                   >
                     {skill}
                   </li>
