@@ -8,9 +8,9 @@ import {
 import { projectId, dataset, apiVersion, token } from "@/lib/env.api";
 
 const config: ClientConfig = {
-  projectId: "z0vx3ggx",
-  dataset: "production",
-  apiVersion: "2024-08-01",
+  projectId: projectId,
+  dataset: dataset,
+  apiVersion: apiVersion,
   useCdn: process.env.NODE_ENV === "development" ? true : false,
   // useCdn: false,
 };

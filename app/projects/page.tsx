@@ -49,7 +49,7 @@ export default async function Project() {
             key={project._id}
             className="group flex items-center gap-x-4 bg-gradient-to-br from-white to-slate-50 border-2 border-slate-200 hover:border-indigo-300 p-4 rounded-xl transition-all duration-300 ease-in-out hover:shadow-md"
           >
-            <div className="relative w-[60px] h-[60px]">
+            <div className="relative w-[50px] h-[50px]">
               {/* <div className="absolute inset-0 bg-slate-100 rounded-lg transform -rotate-6 transition-transform group-hover:rotate-3"></div> */}
               <div className="absolute inset-0 transform -rotate-6 transition-transform group-hover:rotate-3">
                 <Image
