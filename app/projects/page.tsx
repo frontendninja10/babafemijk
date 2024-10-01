@@ -51,15 +51,13 @@ export default async function Project() {
           >
             <div className="relative w-[50px] h-[50px]">
               {/* <div className="absolute inset-0 bg-slate-100 rounded-lg transform -rotate-6 transition-transform group-hover:rotate-3"></div> */}
-              <div className="absolute inset-0 transform -rotate-6 transition-transform group-hover:rotate-3">
-                <Image
-                  src={project.logo}
-                  layout="fill"
-                  objectFit="contain"
-                  alt={project.name}
-                  className="rounded-lg"
-                />
-              </div>
+              <Image
+                src={project.logo}
+                layout="fill"
+                objectFit="contain"
+                alt={project.name}
+                className="rounded-lg"
+              />
             </div>
             <div>
               <h2 className="font-bold text-lg text-slate-800 mb-1">
