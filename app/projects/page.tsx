@@ -12,10 +12,14 @@ const openSans = Open_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
-// export const revalidate = 10;
-
 export default async function Project() {
   const projects: ProjectType[] = await getProjects();
+
+  const sortedProjects = projects.sort((a, b) => {
+    if (a.name === "Flincap") return -1; // Flincap comes first
+    if (b.name === "Flincap") return 1; // Flincap comes first
+    return 0; // Keep original order for others
+  });
 
   return (
     <main
@@ -23,7 +27,7 @@ export default async function Project() {
     >
       <section className="max-w-2xl mb-16">
         <h1
-          className={`${openSans.className} text-[#1d2f6f] text-3xl font-bold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight`}
+          className={`${openSans.className} text-[#1d2f6f] text-3xl font-semibold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight`}
         >
           Welcome to my Projects Showcase
         </h1>
@@ -39,7 +43,7 @@ export default async function Project() {
       </section>
 
       <section className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mb-12">
-        {projects.map((project) => (
+        {sortedProjects.map((project) => (
           <Link
             href={`/projects/${project.slug}`}
             key={project._id}
