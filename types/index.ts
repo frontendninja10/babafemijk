@@ -27,6 +27,7 @@ export type EventsType = {
   };
   caption: string;
   eventDate: string;
+  year: number;
 };
 
 export type JobType = {
