@@ -31,6 +31,11 @@ const events = {
       title: "Event Date",
       type: "datetime",
     },
+    {
+      name: "year",
+      title: "Year",
+      type: "number",
+    },
   ],
 };
 

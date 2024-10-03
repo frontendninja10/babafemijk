@@ -11,7 +11,8 @@ const openSans = Open_Sans({
 export default async function Events() {
   const events: EventsType[] = await getEvents();
 
-  console.log(events);
+  const sortedEvents = events.sort((a, b) => b.year - a.year);
+  console.log(sortedEvents);
 
   return (
     <section className="py-10 lg:mt-24 max-w-6xl mx-auto px-6">
@@ -30,26 +31,20 @@ export default async function Events() {
         </p>
       </section>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {events
-          .sort(
-            (a, b) =>
-              new Date(a.eventDate).getFullYear() -
-              new Date(b.eventDate).getFullYear()
-          )
-          .map((event) => (
-            <div key={event._id}>
-              <Image
-                src={event.eventImage.image}
-                alt={event.eventImage.alt}
-                width={900}
-                height={460}
-                className="rounded-xl border"
-              />
-              <p className="text-sm text-center mt-4 font-bold">
-                {event.caption}
-              </p>
-            </div>
-          ))}
+        {sortedEvents.map((event) => (
+          <div key={event._id}>
+            <Image
+              src={event.eventImage.image}
+              alt={event.eventImage.alt}
+              width={900}
+              height={460}
+              className="rounded-xl border transition-all duration-300 hover:scale-105"
+            />
+            <p className="text-sm text-center mt-4 font-bold">
+              {event.caption}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );

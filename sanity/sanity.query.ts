@@ -76,6 +76,7 @@ export async function getEvents() {
       },
       caption,
       eventDate,
+      year,
     }`
   );
 }
