@@ -28,20 +28,25 @@ export default async function Events() {
         </p>
       </section>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {events.map((event) => (
-          <div key={event._id}>
-            <Image
-              src={event.eventImage.image}
-              alt={event.eventImage.alt}
-              width={900}
-              height={460}
-              className="rounded-xl border"
-            />
-            <p className="text-sm text-center mt-4 font-bold">
-              {event.caption}
-            </p>
-          </div>
-        ))}
+        {events
+          .sort(
+            (a, b) =>
+              new Date(a.eventDate).getTime() - new Date(b.eventDate).getTime()
+          )
+          .map((event) => (
+            <div key={event._id}>
+              <Image
+                src={event.eventImage.image}
+                alt={event.eventImage.alt}
+                width={900}
+                height={460}
+                className="rounded-xl border"
+              />
+              <p className="text-sm text-center mt-4 font-bold">
+                {event.caption}
+              </p>
+            </div>
+          ))}
       </div>
     </section>
   );
