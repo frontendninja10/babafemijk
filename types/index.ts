@@ -19,6 +19,16 @@ export type ProfileType = {
   skills: string[];
 };
 
+export type EventsType = {
+  _id: string;
+  eventImage: {
+    alt: string;
+    image: string;
+  };
+  caption: string;
+  eventDate: string;
+};
+
 export type JobType = {
   _id: string;
   name: string;
