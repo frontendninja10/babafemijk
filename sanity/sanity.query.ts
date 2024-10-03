@@ -65,6 +65,21 @@ export const jobQuery = groq`*[_type == "job"] | order(_createdAt desc){
   endDate,
 }`;
 
+export async function getEvents() {
+  return client.fetch(
+    groq`*[_type == "events"] | order(_createdAt desc){
+      _id,
+      eventImage {
+        "image": asset->url,
+        "lqip": asset->metadata.lqip,
+        alt,
+      },
+      caption,
+      eventDate,
+    }`
+  );
+}
+
 export async function getProjects() {
   return client.fetch(
     groq`*[_type == "project"]{
