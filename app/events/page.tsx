@@ -11,6 +11,8 @@ const openSans = Open_Sans({
 export default async function Events() {
   const events: EventsType[] = await getEvents();
 
+  console.log(events);
+
   return (
     <section className="py-10 lg:mt-24 max-w-6xl mx-auto px-6">
       <section className="max-w-4xl mb-16">
@@ -31,7 +33,8 @@ export default async function Events() {
         {events
           .sort(
             (a, b) =>
-              new Date(a.eventDate).getTime() - new Date(b.eventDate).getTime()
+              new Date(a.eventDate).getFullYear() -
+              new Date(b.eventDate).getFullYear()
           )
           .map((event) => (
             <div key={event._id}>
