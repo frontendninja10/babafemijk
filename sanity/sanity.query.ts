@@ -67,7 +67,7 @@ export const jobQuery = groq`*[_type == "job"] | order(_createdAt desc){
 
 export async function getEvents() {
   return client.fetch(
-    groq`*[_type == "events"] | order(_createdAt desc){
+    groq`*[_type == "events"] | order(_createdAt asc){
       _id,
       eventImage {
         "image": asset->url,
