@@ -6,7 +6,7 @@ export default async function Achievements() {
   const achievements: AchievementsType[] = await getAchievements();
   console.log(achievements);
   return (
-    <section className="py-10 lg:mt-24 max-w-6xl mx-auto px-6">
+    <section className="py-10 lg:mt-24 max-w-6xl mx-auto px-6 mt-20">
       <section className="max-w-4xl mb-16">
         <h1
           className={` text-[#1d2f6f] text-3xl font-semibold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight`}

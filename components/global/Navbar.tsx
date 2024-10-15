@@ -13,6 +13,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { useState } from "react";
+import { X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -68,7 +69,7 @@ export default function Navbar() {
           </svg> */}
         </Link>
         <div className="lg:block hidden ml-auto">
-          <ul className="flex items-center gap-x-8 text-[#1d2f6f]">
+          <ul className="flex items-center gap-x-8 text-[#0f172a]">
             <li>
               <Link
                 href="/about"
@@ -87,15 +88,15 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                href="/"
+                href="/achievements"
                 className="hover:text-[#161960] duration-200 hover:underline"
               >
-                Quotes
+                Achievements
               </Link>
             </li>
             <li>
               <Link
-                href="/"
+                href="/blog"
                 className="hover:text-[#161960] duration-200 hover:underline"
               >
                 Blog
@@ -108,21 +109,21 @@ export default function Navbar() {
           <DrawerTrigger>
             <Menu className="lg:hidden" />
           </DrawerTrigger>
-          <DrawerContent className="">
+          <DrawerContent className="flex flex-col justify-start items-center p-6">
+            <DrawerClose className="self-end">
+              <X className="w-8 h-8" />
+            </DrawerClose>
             <DrawerHeader>
-              <DrawerTitle className="text-2xl font-bold mb-10">
-                Menu
-              </DrawerTitle>
               <DrawerDescription>
-                <ul className="flex flex-col divide-y items-center">
+                <ul className="flex mt-20 flex-col divide-y items-center">
                   {[
                     { href: "/", text: "Home" },
                     { href: "/about", text: "About" },
                     { href: "/projects", text: "Projects" },
-                    { href: "/", text: "Quotes" },
-                    { href: "/", text: "Blog" },
+                    { href: "/achievements", text: "Achievements" },
+                    { href: "/blog", text: "Blog" },
                   ].map((link, index) => (
-                    <li key={index} className={index > 0 ? "pt-5" : ""}>
+                    <li key={index} className={index > 0 ? "pt-7" : ""}>
                       <Link
                         href={link.href}
                         className="hover:text-[#161960] text-xl duration-200 hover:underline"
@@ -135,12 +136,6 @@ export default function Navbar() {
                 </ul>
               </DrawerDescription>
             </DrawerHeader>
-            {/* <DrawerFooter>
-              <Button>Submit</Button>
-              <DrawerClose>
-                <Button variant="outline">Cancel</Button>
-              </DrawerClose>
-            </DrawerFooter> */}
           </DrawerContent>
         </Drawer>
       </div>
