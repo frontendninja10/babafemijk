@@ -7,7 +7,7 @@ type Metadata = {
   summary: string;
   image?: string;
 };
-
+console.log(path.join(process.cwd(), "app", "blog", "posts"));
 function parseFrontmatter(fileContent: string) {
   let frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
   let match = frontmatterRegex.exec(fileContent);
