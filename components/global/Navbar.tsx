@@ -123,7 +123,7 @@ export default function Navbar() {
                     { href: "/", text: "Quotes" },
                     { href: "/", text: "Blog" },
                   ].map((link, index) => (
-                    <li key={index} className={index > 0 ? "pt-5" : ""}>
+                    <li key={index} className={index > 0 ? "pt-7" : ""}>
                       <Link
                         href={link.href}
                         className="hover:text-[#161960] text-xl duration-200 hover:underline"
