@@ -145,6 +145,10 @@
   font-family: "Fira Code", monospace;
 }
 
+.prose pre {
+  @apply py-6 px-6;
+}
+
 pre::-webkit-scrollbar {
   display: none;
 }

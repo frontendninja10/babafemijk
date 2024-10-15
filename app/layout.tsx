@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={`${openSans.className} bg-slate-100`}>
         <Navbar />
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

@@ -10,12 +10,13 @@ export default function Blog() {
     <div>
       <section className="py-10 lg:mt-24 max-w-6xl mx-auto mt-20">
         <h1
-          className={` text-[#1d2f6f] text-3xl font-semibold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight`}
+          className={` text-[#1d2f6f] text-3xl lg:text-4xl font-semibold tracking-tight mb-2 lg:leading-[3.7rem] leading-tight`}
         >
-          Blog
+          Welcome to my blog!
         </h1>
-        <p className={`text-base text-slate-500 leading-relaxed`}>
-          Here are some of my blog posts.
+        <p className={`text-base text-slate-500 leading-relaxed mb-7`}>
+          This is one of the many ways I share my thoughts and experiences with
+          the world.
         </p>
         <BlogPosts />
       </section>

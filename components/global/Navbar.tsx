@@ -69,7 +69,7 @@ export default function Navbar() {
           </svg> */}
         </Link>
         <div className="lg:block hidden ml-auto">
-          <ul className="flex items-center gap-x-8 text-[#1d2f6f]">
+          <ul className="flex items-center gap-x-8 text-[#0f172a]">
             <li>
               <Link
                 href="/about"
@@ -88,15 +88,15 @@ export default function Navbar() {
             </li>
             <li>
               <Link
-                href="/"
+                href="/achievements"
                 className="hover:text-[#161960] duration-200 hover:underline"
               >
-                Quotes
+                Achievements
               </Link>
             </li>
             <li>
               <Link
-                href="/"
+                href="/blog"
                 className="hover:text-[#161960] duration-200 hover:underline"
               >
                 Blog

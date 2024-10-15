@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { highlight } from "sugar-high";
 import React from "react";
+import { codeToHtml } from "shiki";
 
 function Table({ data }: any) {
   let headers = data.headers.map((header: any, index: any) => (
@@ -48,8 +48,11 @@ function RoundedImage(props: any) {
   return <Image alt={props.alt} className="rounded-lg" {...props} />;
 }
 
-function Code({ children, ...props }: any) {
-  let codeHTML = highlight(children);
+async function Code({ children, ...props }: any) {
+  let codeHTML = await codeToHtml(children, {
+    lang: "ts",
+    theme: "nord",
+  });
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 }
 
