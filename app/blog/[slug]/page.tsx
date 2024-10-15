@@ -90,7 +90,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
           {formatDate(post.metadata.publishedAt)}
         </p>
       </div>
-      <article className="">
+      <article className="prose lg:prose-md max-w-none prose-slate">
         <CustomMDX source={post.content} />
       </article>
     </section>

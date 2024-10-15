@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -29,6 +29,15 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --sh-class: #ff6f61; /* Coral */
+    --sh-identifier: #f8f9fa; /* Light Gray */
+    --sh-sign: #e67e22; /* Carrot */
+    --sh-string: #3cb371; /* Medium Sea Green */
+    --sh-keyword: #6a5acd; /* Slate Blue */
+    --sh-comment: #7f8c8d; /* Concrete */
+    --sh-jsxliterals: #2980b9; /* Bright Blue */
+    --sh-property: #d35400; /* Pumpkin */
+    --sh-entity: #d35400; /* Pumpkin */
   }
 
   .dark {
@@ -92,4 +101,70 @@
 
 .hero-svg .hero-icon-3 {
   animation-delay: -2.6s;
+}
+
+.prose p {
+  @apply my-4 text-neutral-800 dark:text-neutral-200;
+}
+
+.prose h1 {
+  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h2 {
+  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h3 {
+  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h4 {
+  @apply text-lg font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose strong {
+  @apply font-medium;
+}
+
+.prose ul {
+  @apply list-disc pl-6;
+}
+
+.prose ol {
+  @apply list-decimal pl-6;
+}
+
+.prose > :first-child {
+  /* Override removing top margin, causing layout shift */
+  margin-top: 1.25em !important;
+  margin-bottom: 1.25em !important;
+}
+
+.prose code {
+  font-family: "Fira Code", monospace;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Remove Safari input shadow on mobile */
+input[type="text"],
+input[type="email"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+table {
+  display: block;
+  max-width: fit-content;
+  overflow-x: auto;
+  white-space: nowrap;
 }
