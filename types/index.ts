@@ -30,6 +30,16 @@ export type EventsType = {
   year: number;
 };
 
+export type AchievementsType = {
+  _id: string;
+  achievementImage: {
+    alt: string;
+    image: string;
+  };
+  achievementTitle: string;
+  achievementDate: string;
+};
+
 export type JobType = {
   _id: string;
   name: string;
