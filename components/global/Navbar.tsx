@@ -120,8 +120,8 @@ export default function Navbar() {
                     { href: "/", text: "Home" },
                     { href: "/about", text: "About" },
                     { href: "/projects", text: "Projects" },
-                    { href: "/", text: "Quotes" },
-                    { href: "/", text: "Blog" },
+                    { href: "/achievements", text: "Achievements" },
+                    { href: "/blog", text: "Blog" },
                   ].map((link, index) => (
                     <li key={index} className={index > 0 ? "pt-7" : ""}>
                       <Link
