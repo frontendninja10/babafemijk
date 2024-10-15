@@ -65,6 +65,20 @@ export const jobQuery = groq`*[_type == "job"] | order(_createdAt desc){
   endDate,
 }`;
 
+export async function getAchievements() {
+  return client.fetch(
+    groq`*[_type == "achievements"] | order(_createdAt asc){
+      _id,
+      achievementImage {
+        "image": asset->url,
+        "lqip": asset->metadata.lqip,
+        alt,
+      },
+      achievementTitle,
+     
+    }`
+  );
+}
 export async function getEvents() {
   return client.fetch(
     groq`*[_type == "events"] | order(_createdAt asc){
