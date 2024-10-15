@@ -13,6 +13,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { useState } from "react";
+import { X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -108,13 +109,13 @@ export default function Navbar() {
           <DrawerTrigger>
             <Menu className="lg:hidden" />
           </DrawerTrigger>
-          <DrawerContent className="">
+          <DrawerContent className="flex flex-col justify-start items-center p-6">
+            <DrawerClose className="self-end">
+              <X className="w-8 h-8" />
+            </DrawerClose>
             <DrawerHeader>
-              <DrawerTitle className="text-2xl font-bold mb-10">
-                Menu
-              </DrawerTitle>
               <DrawerDescription>
-                <ul className="flex flex-col divide-y items-center">
+                <ul className="flex mt-20 flex-col divide-y items-center">
                   {[
                     { href: "/", text: "Home" },
                     { href: "/about", text: "About" },
@@ -135,12 +136,6 @@ export default function Navbar() {
                 </ul>
               </DrawerDescription>
             </DrawerHeader>
-            {/* <DrawerFooter>
-              <Button>Submit</Button>
-              <DrawerClose>
-                <Button variant="outline">Cancel</Button>
-              </DrawerClose>
-            </DrawerFooter> */}
           </DrawerContent>
         </Drawer>
       </div>
