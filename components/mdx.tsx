@@ -3,6 +3,8 @@ import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import React from "react";
 import { codeToHtml } from "shiki";
+import { BlogPosts } from "./BlogPosts";
+import ContributionGraph from "./ContributionGraph";
 
 function Table({ data }: any) {
   let headers = data.headers.map((header: any, index: any) => (
@@ -100,6 +102,8 @@ let components = {
   a: CustomLink,
   code: Code,
   Table,
+  BlogPosts,
+  ContributionGraph,
 };
 
 export function CustomMDX(props: any) {

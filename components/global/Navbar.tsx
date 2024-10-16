@@ -14,9 +14,11 @@ import {
 } from "@/components/ui/drawer";
 import { useState } from "react";
 import { X } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const closeDrawer = () => setIsOpen(false);
 

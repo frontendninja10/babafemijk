@@ -1,11 +1,30 @@
+import { BlogPosts } from "../../../components/BlogPosts";
+import ContributionGraph from "../../../components/ContributionGraph";
+
 ---
+
 title: "Understanding React State Management"
 publishedAt: "2024-10-07"
 summary: "React state management is a crucial aspect of building complex applications. It allows developers to manage and share data across components efficiently."
+
 ---
 
-React state management is a crucial aspect of building complex applications. It allows developers to manage and share data across components efficiently. In this post, we'll explore the different types of state management in React, accompanied by practical examples through markdown code snippets.
+A react application can be described as a sea of components working together for usually two purposes. To display UI to users and to provide a way for users to interact with UI.
+The bulk of React applications in the world revolve around these two purposes.
+A React application can be described as a sea of components working together for usually two purposes: to display UI to users and to provide a way for users to interact with that UI. The bulk of React applications in the world revolve around these two purposes.
 
-## Introduction to State Management
+### Introduction to State Management
 
 State management refers to the process of managing the state of an application. The state of an application is the data that the application needs to function. It can include things like user data, application data, and more.
+
+### What does it mean for a component to have state?
+
+State is a vital part of every React application. State is how you make react components come alive. When a component has state, it can help you remember when data changes and reflects the new data in the UI.
+So how then do you know whether to give a component state? What’s the importance of giving a component state? Must all your React components have state?
+To answer these questions, we need to explore what it means to give a component state.
+
+In simple words, giving a component state is you telling the component
+
+> Heyy, I’m giving you state because I want you to help me remember something. I need you to help me track a particular piece of data, and when that data changes, refresh yourself and display the new data to the user.
+
+So in summary, state is simply a component’s memory. It is a way for components to remember ‘things’.
