@@ -5,6 +5,7 @@ import React from "react";
 import { codeToHtml } from "shiki";
 import { BlogPosts } from "./BlogPosts";
 import ContributionGraph from "./ContributionGraph";
+import BankApp from "./blog/react-state-mgt/BankApp";
 
 function Table({ data }: any) {
   let headers = data.headers.map((header: any, index: any) => (
@@ -104,6 +105,7 @@ let components = {
   Table,
   BlogPosts,
   ContributionGraph,
+  BankApp,
 };
 
 export function CustomMDX(props: any) {
