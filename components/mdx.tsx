@@ -6,6 +6,8 @@ import { codeToHtml } from "shiki";
 import { BlogPosts } from "./BlogPosts";
 import ContributionGraph from "./ContributionGraph";
 import BankApp from "./blog/react-state-mgt/BankApp";
+import { Sandpack } from "@codesandbox/sandpack-react";
+import Editable from "./blog/react-state-mgt/Editable";
 
 function Table({ data }: any) {
   let headers = data.headers.map((header: any, index: any) => (
@@ -106,6 +108,8 @@ let components = {
   BlogPosts,
   ContributionGraph,
   BankApp,
+  Sandpack,
+  Editable,
 };
 
 export function CustomMDX(props: any) {

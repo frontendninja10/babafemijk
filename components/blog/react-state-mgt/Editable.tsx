@@ -1,9 +1,13 @@
-"use client";
-
 import { useState } from "react";
-import { CircleUserRound } from "lucide-react";
+import { Sandpack } from "@codesandbox/sandpack-react";
 
-export default function BankApp() {
+import { nightOwl } from "@codesandbox/sandpack-themes";
+
+export default function Editable() {
+  const files = {
+    "App.js": `import React, { useState } from "react";
+
+    export default function BankApp() {
   let balance = 1000000;
 
   const depositAmounts = [100, 200, 500, 1000];
@@ -20,7 +24,7 @@ export default function BankApp() {
         alert("Insufficient funds for this withdrawal.");
       }
     }
-    console.log(`Current Balance: $${balance.toLocaleString()}`);
+    console.log(\`Current Balance: $\${balance.toLocaleString()}\`);
   };
 
   return (
@@ -29,7 +33,7 @@ export default function BankApp() {
         <h3 className="text-lg font-semibold">Welcome back</h3>
         {/* <CircleUserRound /> */}
       </div>
-      <p className="text-xl">Balance: ${balance.toLocaleString()}</p>{" "}
+      <p className="text-xl">Balance: \${balance.toLocaleString()}</p>{" "}
       {/* Format balance with commas */}
       <section className="flex flex-col lg:flex-row lg:gap-10">
         <section>
@@ -41,7 +45,7 @@ export default function BankApp() {
                 onClick={() => updateBalance(amount, true)}
                 className="bg-black text-white px-4 py-2 transform transition-transform duration-200 active:scale-95"
               >
-                ${amount}
+                \${amount}
               </button>
             ))}
           </div>
@@ -55,12 +59,33 @@ export default function BankApp() {
                 onClick={() => updateBalance(amount, false)}
                 className="bg-black text-white px-4 py-2 transform transition-transform duration-200 active:scale-95"
               >
-                ${amount}
+                \${amount}
               </button>
             ))}
           </div>
         </section>
       </section>
     </div>
+  );
+}
+
+
+    `,
+  };
+  return (
+    <Sandpack
+      template="react"
+      customSetup={{
+        devDependencies: {
+          tailwindcss: "^3.4.1",
+        },
+      }}
+      files={files}
+      options={{
+        showLineNumbers: true,
+        showConsole: true,
+        showConsoleButton: true,
+      }}
+    />
   );
 }
