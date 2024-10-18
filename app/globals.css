@@ -103,8 +103,35 @@
   animation-delay: -2.6s;
 }
 
+.prose .anchor {
+  @apply absolute invisible no-underline;
+
+  margin-left: -1em;
+  padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
+  cursor: pointer;
+}
+
+.anchor:hover {
+  @apply visible;
+}
+
+.prose a {
+  @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+}
+
+.prose .anchor:after {
+  @apply text-neutral-300 dark:text-neutral-700;
+  content: "#";
+}
+
+.prose *:hover > .anchor {
+  @apply visible;
+}
+
 .prose p {
-  @apply my-4 text-neutral-800 dark:text-neutral-200;
+  @apply my-4 text-slate-600 dark:text-neutral-200;
 }
 
 .prose h1 {
@@ -112,11 +139,11 @@
 }
 
 .prose h2 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-3xl font-medium tracking-tight mt-6 mb-2;
 }
 
 .prose h3 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-2xl font-medium tracking-tight mt-6 mb-2;
 }
 
 .prose h4 {
@@ -128,7 +155,7 @@
 }
 
 .prose ul {
-  @apply list-disc pl-6;
+  @apply list-disc text-slate-600 pl-14;
 }
 
 .prose ol {
@@ -147,6 +174,7 @@
 
 .prose pre {
   @apply py-6 px-6;
+  background-color: #334155;
 }
 
 pre::-webkit-scrollbar {
@@ -171,4 +199,10 @@ table {
   max-width: fit-content;
   overflow-x: auto;
   white-space: nowrap;
+}
+
+.prose-slate {
+  @apply text-[#1d2f6f];
+  --tw-prose-headings: #132052;
+  --tw-prose-bullets: #1d2f6f;
 }

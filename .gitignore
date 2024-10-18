@@ -15,8 +15,7 @@
 
 # production
 /build
-/sanity
-/app/blog
+/app/blog/posts
 
 # misc
 .DS_Store

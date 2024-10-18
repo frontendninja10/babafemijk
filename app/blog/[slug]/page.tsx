@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
 import { formatDate, getBlogPosts } from "../utils";
 import { baseUrl } from "../../sitemap";
+import { MoveLeft } from "lucide-react";
+import Link from "next/link";
 
 export async function generateStaticParams() {
   let posts = getBlogPosts();
@@ -59,7 +61,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <section className="py-10 lg:mt-24 max-w-6xl mx-auto mt-20">
+    <section className="py-10 lg:mt-20 max-w-4xl mx-auto mt-20 px-4 lg:px-0 h-full">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -82,7 +84,14 @@ export default function Blog({ params }: { params: { slug: string } }) {
           }),
         }}
       />
-      <h1 className="title font-semibold text-[#0f172a] text-2xl tracking-tighter">
+      <Link
+        href="/blog"
+        className="flex items-center gap-x-2 mb-8 text-slate-600"
+      >
+        <MoveLeft className="w-4 h-4" />
+        <p className="text-sm">Back to all articles</p>
+      </Link>
+      <h1 className="title font-semibold text-[#132052] lg:text-3xl text-2xl tracking-tighter">
         {post.metadata.title}
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm">

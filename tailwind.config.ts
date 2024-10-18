@@ -67,10 +67,16 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        tilt: {
+          "0%": { transform: "rotate(-3deg)" }, // Start tilted left
+          "50%": { transform: "rotate(3deg)" }, // Tilted right
+          "100%": { transform: "rotate(-3deg)" }, // Back to left
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        tilt: "tilt 3s ease-in-out infinite",
       },
     },
   },
