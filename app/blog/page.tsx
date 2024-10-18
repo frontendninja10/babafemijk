@@ -22,7 +22,7 @@ export default function Blog() {
           This is one of the many ways I share my thoughts and experiences with
           the world.
         </p>
-        {/* <BlogPosts /> */}
+        <BlogPosts />
       </section>
     </div>
   );
