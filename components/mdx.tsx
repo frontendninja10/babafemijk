@@ -8,7 +8,8 @@ import ContributionGraph from "./ContributionGraph";
 import BankApp from "./blog/react-state-mgt/BankApp";
 import { Sandpack } from "@codesandbox/sandpack-react";
 import Editable from "./blog/react-state-mgt/Editable";
-
+import ExampleWithState from "./blog/react-state-mgt/ExampleWithState";
+import WeeklyFrontendGoals from "./blog/react-state-mgt/WeeklyFrontendGoals";
 function Table({ data }: any) {
   let headers = data.headers.map((header: any, index: any) => (
     <th key={index}>{header}</th>
@@ -56,7 +57,7 @@ function RoundedImage(props: any) {
 async function Code({ children, ...props }: any) {
   let codeHTML = await codeToHtml(children, {
     lang: "ts",
-    theme: "nord",
+    theme: "everforest-light",
   });
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 }
@@ -110,6 +111,8 @@ let components = {
   BankApp,
   Sandpack,
   Editable,
+  ExampleWithState,
+  WeeklyFrontendGoals,
 };
 
 export function CustomMDX(props: any) {

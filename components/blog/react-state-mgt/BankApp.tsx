@@ -39,7 +39,7 @@ export default function BankApp() {
               <button
                 key={amount}
                 onClick={() => updateBalance(amount, true)}
-                className="bg-black text-white px-4 py-2 transform transition-transform duration-200 active:scale-95"
+                className="bg-slate-700 text-white px-4 py-2 transform transition-transform duration-200 active:scale-95"
               >
                 ${amount}
               </button>
@@ -53,7 +53,7 @@ export default function BankApp() {
               <button
                 key={amount}
                 onClick={() => updateBalance(amount, false)}
-                className="bg-black text-white px-4 py-2 transform transition-transform duration-200 active:scale-95"
+                className="bg-slate-700 text-white px-4 py-2 transform transition-transform duration-200 active:scale-95"
               >
                 ${amount}
               </button>

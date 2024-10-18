@@ -61,7 +61,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <section className="py-10 lg:mt-20 max-w-4xl mx-auto mt-20">
+    <section className="py-10 lg:mt-20 max-w-4xl mx-auto mt-20 px-4 lg:px-0 h-full">
       <script
         type="application/ld+json"
         suppressHydrationWarning

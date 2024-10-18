@@ -6,13 +6,15 @@ import {
   SandpackPreview,
 } from "@codesandbox/sandpack-react";
 
-import { aquaBlue } from "@codesandbox/sandpack-themes";
+import { ecoLight, githubLight, aquaBlue } from "@codesandbox/sandpack-themes";
 
 export default function Editable() {
   const files = {
-    "App.js": ` import "./style.css";
+    "App.js": `  
+    import "./style.css";
+    import { useState } from "react";
     export default function BankApp() {
-let balance = 1000000;
+const [balance, setBalance] = useState(1000000);
 
   const depositAmounts = [100, 200, 500, 1000];
 
@@ -20,10 +22,10 @@ let balance = 1000000;
 
   const updateBalance = (amount: number, isDeposit: boolean) => {
     if (isDeposit) {
-      balance += amount;
+      setBalance(balance + amount);
     } else {
       if (balance >= amount) {
-        balance -= amount;
+        setBalance(balance - amount);
       } else {
         alert("Insufficient funds for this withdrawal.");
       }
@@ -33,7 +35,7 @@ let balance = 1000000;
 
   return (
     <div className="container">
-        <h3>Welcome back</h3>
+      <h3>Welcome back</h3>
       <p>Balance: \${balance.toLocaleString()}</p>
       <section>
         <section>
@@ -68,7 +70,6 @@ let balance = 1000000;
     </div>
   );
 }
-
 
     `,
     "style.css": `
