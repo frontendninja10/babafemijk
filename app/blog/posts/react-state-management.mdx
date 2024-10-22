@@ -72,29 +72,29 @@ Here are examples of how a user can interact with a React application thereby ca
 
 All these interactions cause some data to change. A React application needs to be smart enough to know when the data changes and then reflect that change in the UI. The way to give a React application this ability is by giving it **state**.
 
-Now, let's explore this React component. It's a straightforward bank application that enables you to deposit and withdraw funds. Feel free to experiment with saving and withdrawing some money.
+Now, let's explore this React component. It's a straightforward bank application that enables you to deposit and withdraw funds. Feel free to experiment with saving and withdrawing some money. 💵 💰
 
 <BankApp />
 
 <br />
 
-You may observe that your balance remains unchanged when you click the buttons. Why is this so? Why does the balance seem stuck? To answer these question, let's take a look at the code and what happens in the console. Try clicking the buttons once again and observe the console.
+You may observe that your balance remains unchanged when you click the buttons. Why is this so? Why does the balance seem stuck? To answer these question, let's take a look at the code and what happens in the console. Try clicking the buttons once again and observe the console. 👀
 
 <br />
 
 <Editable />
 
-Voila! Our balance actually gets updated but it doesn't get displayed in our user interface. This is because the JSX part of the React code doesnt know that the balance has changed. As shown in the console, the balance variable gets updated each time we click the buttons but the UI isn't aware about this change, so it just keeps displaying the initial balance.
+Voila! Our balance actually gets updated but it doesn't get displayed in our user interface. This is because the JSX part of the React code doesnt know that the balance has changed. As shown in the console, the balance variable gets updated each time we click the buttons but the UI isn't aware about this change, so it just keeps displaying the initial balance. 🤷
 
-Like the bank example I gave earlier, imagine that you make some deposits and withdrawals to your account. You go to the bank to check your balance and discover that your balance is not updated. This is because the bank official isn't aware of the changes you made to your account. So he has to find a way to remember the data changes you made to your account. Likewise in React applications, we need to find a way to give components the ability to remember data changes and then display the new data to the user. This is where state comes in.
+Like the bank example I gave earlier, imagine that you make some deposits and withdrawals to your account. You go to the bank to check your balance and discover that your balance is not updated. This is because the bank official isn't aware of the changes you made to your account. So he has to find a way to remember the data changes you made to your account. Likewise in React applications, we need to find a way to give components the ability to remember data changes and then display the new data to the user. This is where **state** comes in. 💯
 
 ### Giving a component state
 
-We need to give our balance state to the JSX part of the React code. We can do this by using the useState hook. According to the React documentation,
+We need to give our balance state to the JSX part of the React code. We can do this by using the <span className="inline-code">useState</span> hook. According to the React documentation,
 
 > useState is a React Hook that lets you add a state variable to your component.
 
-The useState hook takes an initial value which could be a number, string, boolean, array, object, etc. and then returns an array with two values. The _first value_ is the state variable and the _second value_ is a function that allows us to update the state variable.
+The <span className="inline-code">useState</span> hook takes an initial value which could be a number, string, boolean, array, object, etc. and then returns an array with two values. The _first value_ is the state variable and the _second value_ is a function that allows us to update the state variable.
 
 ```tsx
 const [balance, setBalance] = useState(1000000);
