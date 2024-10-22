@@ -12,7 +12,7 @@ import Editable from "../../../components/blog/react-state-mgt/Editable";
 import ExampleWithState from "../../../components/blog/react-state-mgt/ExampleWithState";
 import WeeklyFrontendGoals from "../../../components/blog/react-state-mgt/WeeklyFrontendGoals";
 
-While learning React back in 2022, state was one of the most confusing topics for me. I remember staying up late at night on few occasions trying to figure out why it was vital to building React applications, and what made it so special. It's 2024 now, I still learn new things about state and I've come to realize that state is the lifeblood of any React application. This article is a simple guide to understanding state in React and I hope you find it helpful and informative. Cheers to learning! 🎉
+While learning React back in 2022, state was one of the most confusing topics for me. I remember staying up late at night on few occasions trying to hack my way through finding out why it was vital to building React applications, and what made it so special. It's 2024 now, I still learn new things about state and I've come to realize that state is the lifeblood of any React application. This article is a simple guide to understanding state in React and I hope you find it helpful and informative. Cheers to learning! 🎉
 
 ### Table of contents
 
@@ -46,7 +46,7 @@ So in summary, state is simply a component’s memory. It is a way for component
 
 When I mean that state is a way for components to remember things, the things in context is simply data.
 React applications are data-driven. This means that they are strongly influenced by data.
-Let’s break this down. I read an article by expert Engineer Kent C Dodds. In this article he quoted something saying, “User interfaces are just a skin over some data.” What this means is that a React application is the interface between data and users.
+Let’s break this down. I read an article by expert Engineer [Kent C. Dodds](https://kentcdodds.com/). In this article he quoted something saying, “Web applications are just a skin on top of a database.” Check out the article [here](https://www.epicreact.dev/react-forms). What this means is that a React application is the interface between data and users.
 And the amazing thing about data is that it changes, it’s dynamic, it doesn’t always remain constant.
 
 ### An Example
@@ -54,11 +54,11 @@ And the amazing thing about data is that it changes, it’s dynamic, it doesn’
 When you go to the bank, you usually want to go interact with some ‘data’. See the bank as a React application. The data in context is your money. Remember that data is dynamic, it changes, it doesn’t always remain constant. So at the bank you can add to your money, subtract from it or do anything you want with it.
 But somehow, you can’t just walk into any bank and go directly to where your money is kept. You need some interface, a skin over your data, you need to interact with the bank official.
 
-> A user interface is just a skin over some data.
+> Web applications are just a skin on top of a database.
 
 In this context, the bank official is our user interface. When you get a deposit, your data changes and then the bank official needs to fetch your new balance and then display it to you. As you interact with the bank thereby causing the data to change, that's how a user interacts with a React application, also causing the data to change.
 
-Here are examples of how a user can interact with a React application and cause the data to change. A user can:
+Here are examples of how a user can interact with a React application thereby causing some data to change. A user could:
 
 - Click a button to add to their money
 - Click a button to subtract from their money
@@ -70,7 +70,7 @@ Here are examples of how a user can interact with a React application and cause 
 - Add a product to a shopping cart
 - Delete a post on a social media app
 
-All these interactions cause the data to change. A React application needs to be smart enough to know when the data changes and then reflect that change in the UI. The way to give a React application this ability is by giving it **state**.
+All these interactions cause some data to change. A React application needs to be smart enough to know when the data changes and then reflect that change in the UI. The way to give a React application this ability is by giving it **state**.
 
 Now, let's explore this React component. It's a straightforward bank application that enables you to deposit and withdraw funds. Feel free to experiment with saving and withdrawing some money.
 
