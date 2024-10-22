@@ -9,7 +9,7 @@ export const metadata = {
 export default function Blog() {
   return (
     <div>
-      <section className="py-10 lg:mt-24 max-w-6xl mx-auto mt-20">
+      <section className="py-10 px-4 lg:mt-24 max-w-6xl mx-auto mt-20">
         <div className="flex items-center gap-x-2">
           <h1
             className={` text-[#1d2f6f] text-3xl lg:text-4xl font-semibold tracking-normal mb-2 lg:leading-[3.7rem] leading-tight flex items-center gap-x-2`}

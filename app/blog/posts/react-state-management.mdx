@@ -42,7 +42,11 @@ And the amazing thing about data is that it changes, it’s dynamic, it doesn’
 ### An Example
 
 When you go to the bank, you usually want to go interact with some ‘data’. See the bank as a React application. The data in context is your money. Remember that data is dynamic, it changes, it doesn’t always remain constant. So at the bank you can add to your money, subtract from it or do anything you want with it.
-But somehow, you can’t just walk into any bank and go directly to where your money is kept. You need some interface, a skin over your data, you need to interact with the bank official. In this context, this is our user interface. When you get a deposit, your data changes and then the bank official needs to fetch your new balance and then display it to you. As you interact with the bank thereby causing the data to change, that's how a user interacts with a React application, also causing the data to change.
+But somehow, you can’t just walk into any bank and go directly to where your money is kept. You need some interface, a skin over your data, you need to interact with the bank official.
+
+> A user interface is just a skin over some data.
+
+In this context, the bank official is our user interface. When you get a deposit, your data changes and then the bank official needs to fetch your new balance and then display it to you. As you interact with the bank thereby causing the data to change, that's how a user interacts with a React application, also causing the data to change.
 
 Here are examples of how a user can interact with a React application and cause the data to change. A user can:
 
@@ -86,7 +90,7 @@ The useState hook takes an initial value which could be a number, string, boolea
 const [balance, setBalance] = useState(1000000);
 ```
 
-In our case:
+In this example:
 
 - _balance_ is the state variable
 - _setBalance_ is a function that React provides for us to update the state variable
@@ -96,9 +100,3 @@ Now when the data changes, React is aware of it and would automatically refresh 
 <ExampleWithState />
 
 Now our balance gets updated and displayed correctly because our React application is aware of the changes.
-
-Let's see another example.
-
-<WeeklyFrontendGoals />
-
-In this example, we have a list of goals. We can add a new goal to the list by clicking the "Add to list" button. The goal is added to the list and the input field is cleared. State is used to store the list of goals and the new goal.
