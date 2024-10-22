@@ -18,7 +18,7 @@ let balance = 1000000;
 
   const withdrawAmounts = [100, 200, 500, 1000];
 
-  const updateBalance = (amount: number, isDeposit: boolean) => {
+  const updateBalance = (amount, isDeposit) => {
     if (isDeposit) {
       balance += amount;
     } else {

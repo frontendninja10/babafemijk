@@ -57,7 +57,7 @@ function RoundedImage(props: any) {
 async function Code({ children, ...props }: any) {
   let codeHTML = await codeToHtml(children, {
     lang: "ts",
-    theme: "everforest-light",
+    theme: "catppuccin-latte",
   });
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 }

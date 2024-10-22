@@ -206,3 +206,11 @@ table {
   --tw-prose-headings: #132052;
   --tw-prose-bullets: #1d2f6f;
 }
+
+.inline-code {
+  font-family: "Fira Code", monospace;
+  font-weight: 500;
+  background-color: #f0f0f0; /* Optional: background color */
+  padding: 2px 4px; /* Optional: padding for better visibility */
+  border-radius: 4px; /* Optional: rounded corners */
+}
