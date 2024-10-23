@@ -10,6 +10,8 @@ import { Sandpack } from "@codesandbox/sandpack-react";
 import Editable from "./blog/react-state-mgt/Editable";
 import ExampleWithState from "./blog/react-state-mgt/ExampleWithState";
 import WeeklyFrontendGoals from "./blog/react-state-mgt/WeeklyFrontendGoals";
+import Quiz from "./blog/react-state-mgt/Quiz";
+
 function Table({ data }: any) {
   let headers = data.headers.map((header: any, index: any) => (
     <th key={index}>{header}</th>
@@ -117,6 +119,7 @@ let components = {
     Editable,
     ExampleWithState,
     WeeklyFrontendGoals,
+    Quiz,
   },
   sandpack: Sandpack,
 };

@@ -11,6 +11,7 @@ import { Sandpack } from "@codesandbox/sandpack-react";
 import Editable from "../../../components/blog/react-state-mgt/Editable";
 import ExampleWithState from "../../../components/blog/react-state-mgt/ExampleWithState";
 import WeeklyFrontendGoals from "../../../components/blog/react-state-mgt/WeeklyFrontendGoals";
+import Quiz from "../../../components/blog/react-state-mgt/Quiz";
 
 While learning React back in 2022, state was one of the most confusing topics for me. I remember staying up late at night on few occasions trying to hack my way through finding out why it was vital to building React applications, and what made it so special. It's 2024 now, I still learn new things about state and I've come to realize that state is the lifeblood of any React application. This article is a simple guide to understanding state in React and I hope you find it helpful and informative. Cheers to learning! 🎉
 
@@ -169,3 +170,11 @@ const updateBalance = (amount, isDeposit) => {
 - The state setter function can be named anything, it doesn't have to be setState, it can be named anything like <span className="inline-code">setBalance</span>, <span className="inline-code">setName</span>, <span className="inline-code">setAge</span>, etc.
 - When the state variable changes, React is aware of it and automatically refreshes the UI to display the new data.
 - All React components can have state.
+
+<br />
+Now let's test your knowledge with a quiz.
+
+<Quiz />
+
+<br />
+Hope you enjoyed this blog post. See you in the next one! 🚀
