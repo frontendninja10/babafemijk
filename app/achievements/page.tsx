@@ -27,6 +27,9 @@ export default async function Achievements() {
               height={460}
               className="rounded-xl border transition-all duration-300 hover:scale-105"
             />
+            <h3 className="text-xl font-semibold text-center mt-4 text-slate-500">
+              {achievement.achievementTitle}
+            </h3>
           </div>
         ))}
       </div>
