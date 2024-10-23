@@ -12,7 +12,7 @@ export default function Editable() {
   const files = {
     "App.js": `  
     import "./style.css";
-    import { useState } from "react";
+    import { useState, useEffect } from "react";
     export default function BankApp() {
 const [balance, setBalance] = useState(1000000);
 
@@ -20,7 +20,11 @@ const [balance, setBalance] = useState(1000000);
 
   const withdrawAmounts = [100, 200, 500, 1000];
 
-  const updateBalance = (amount: number, isDeposit: boolean) => {
+  useEffect(() => {
+    console.log(\`Current Balance: $\${balance.toLocaleString()}\`);
+  }, [balance]);
+
+  const updateBalance = (amount, isDeposit) => {
     if (isDeposit) {
       setBalance(balance + amount);
     } else {
@@ -30,7 +34,6 @@ const [balance, setBalance] = useState(1000000);
         alert("Insufficient funds for this withdrawal.");
       }
     }
-    console.log(\`Current Balance: $\${balance.toLocaleString()}\`);
   };
 
   return (

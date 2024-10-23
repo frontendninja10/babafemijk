@@ -118,7 +118,8 @@
 }
 
 .prose a {
-  @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+  @apply underline transition-all underline-offset-2 decoration-[0.1em];
+  text-decoration-color: #6a5acd;
 }
 
 .prose .anchor:after {
@@ -205,4 +206,12 @@ table {
   @apply text-[#1d2f6f];
   --tw-prose-headings: #132052;
   --tw-prose-bullets: #1d2f6f;
+}
+
+.inline-code {
+  font-family: "Fira Code", monospace;
+  font-weight: 500;
+  background-color: #f0f0f0; /* Optional: background color */
+  padding: 2px 4px; /* Optional: padding for better visibility */
+  border-radius: 4px; /* Optional: rounded corners */
 }

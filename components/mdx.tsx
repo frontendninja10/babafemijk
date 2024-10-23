@@ -10,6 +10,8 @@ import { Sandpack } from "@codesandbox/sandpack-react";
 import Editable from "./blog/react-state-mgt/Editable";
 import ExampleWithState from "./blog/react-state-mgt/ExampleWithState";
 import WeeklyFrontendGoals from "./blog/react-state-mgt/WeeklyFrontendGoals";
+import Quiz from "./blog/react-state-mgt/Quiz";
+
 function Table({ data }: any) {
   let headers = data.headers.map((header: any, index: any) => (
     <th key={index}>{header}</th>
@@ -57,7 +59,7 @@ function RoundedImage(props: any) {
 async function Code({ children, ...props }: any) {
   let codeHTML = await codeToHtml(children, {
     lang: "ts",
-    theme: "everforest-light",
+    theme: "catppuccin-latte",
   });
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 }
@@ -96,30 +98,42 @@ function createHeading(level: any) {
 }
 
 let components = {
-  h1: createHeading(1),
-  h2: createHeading(2),
-  h3: createHeading(3),
-  h4: createHeading(4),
-  h5: createHeading(5),
-  h6: createHeading(6),
-  Image: RoundedImage,
-  a: CustomLink,
-  code: Code,
-  Table,
-  BlogPosts,
-  ContributionGraph,
-  BankApp,
-  Sandpack,
-  Editable,
-  ExampleWithState,
-  WeeklyFrontendGoals,
+  headings: {
+    h1: createHeading(1),
+    h2: createHeading(2),
+    h3: createHeading(3),
+    h4: createHeading(4),
+    h5: createHeading(5),
+    h6: createHeading(6),
+  },
+  custom: {
+    Image: RoundedImage,
+    a: CustomLink,
+    code: Code,
+    Table,
+  },
+  blog: {
+    BlogPosts,
+    ContributionGraph,
+    BankApp,
+    Editable,
+    ExampleWithState,
+    WeeklyFrontendGoals,
+    Quiz,
+  },
+  sandpack: Sandpack,
 };
 
 export function CustomMDX(props: any) {
   return (
     <MDXRemote
       {...props}
-      components={{ ...components, ...(props.components || {}) }}
+      components={{
+        ...components.headings, // Spread headings
+        ...components.custom, // Spread custom components
+        ...components.blog, // Spread blog components
+        ...(props.components || {}), // Merge any additional components passed in props
+      }}
     />
   );
 }
