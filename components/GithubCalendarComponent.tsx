@@ -2,7 +2,7 @@ import ContributionGraph from "./ContributionGraph";
 
 export default function GithubCalendarComponent() {
   return (
-    <section className="lg:mt-32 lg:mb-32 mt-16 max-w-6xl mx-auto">
+    <section className="lg:mt-32 lg:mb-32 mt-16 max-w-6xl mx-auto px-6">
       <h2 className="font-semibold lg:text-4xl text-3xl mb-4 text-[#1d2f6f]">
         Contribution Graph
       </h2>
