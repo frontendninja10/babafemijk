@@ -31,9 +31,12 @@ export default async function About() {
           <div key={data._id}>
             <section className="grid lg:grid-cols-2 grid-cols-1 gap-x-6 justify-items-center">
               <div className="order-2 lg:order-none">
-                <h1 className="lg:text-5xl text-4xl lg:leading-tight basis-1/2 font-bold mb-8 text-[#1d2f6f]">
+                {/* <h1 className="lg:text-5xl text-4xl lg:leading-tight basis-1/2 font-bold mb-8 text-[#1d2f6f]">
                   I&apos;m {data.fullName}. I live in {data.location}, where I
                   design the future.
+                </h1> */}
+                <h1 className="lg:text-5xl text-4xl lg:leading-tight basis-1/2 font-bold mb-8 text-[#1d2f6f]">
+                  From Nigeria to the world! 🚀
                 </h1>
 
                 <div className="flex flex-col gap-y-3 text-slate-600 leading-relaxed">

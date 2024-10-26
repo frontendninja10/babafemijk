@@ -21,7 +21,7 @@ export default async function Job() {
   });
 
   return (
-    <section className="lg:mt-28 mt-16 max-w-6xl mx-auto">
+    <section className="lg:mt-28 mt-16 max-w-6xl mx-auto px-6">
       <div className="mb-16">
         <h2 className="font-semibold lg:text-4xl text-3xl mb-4 text-[#1d2f6f]">
           Work Experience
