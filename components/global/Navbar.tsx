@@ -15,6 +15,7 @@ import {
 import { useState } from "react";
 import { X } from "lucide-react";
 import { usePathname } from "next/navigation";
+import ModeToggle from "@/components/ui/mode-toggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,11 +30,13 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="py-6 px-6 border-b border-zinc-200 z-30 lg:mb-28 mb-16 fixed top-0 left-0 w-full backdrop-blur-lg">
+    <nav className="py-6 px-6 border-b border-zinc-200 z-30 lg:mb-28 mb-16 fixed top-0 left-0 w-full backdrop-blur-lg dark:border-none">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <Link href="/">
           {/* <Image src={Logo} width={25} height={25} alt="logo" /> */}
-          <h2 className="font-bold text-lg text-[#1d2f6f]">BJK</h2>
+          <h2 className="font-bold text-lg text-[#1d2f6f] dark:text-slate-300">
+            BJK
+          </h2>
           {/* <svg
             width="32"
             height="32"
@@ -71,7 +74,8 @@ export default function Navbar() {
           </svg> */}
         </Link>
         <div className="lg:block hidden ml-auto">
-          <ul className="flex items-center gap-x-8 text-[#0f172a]">
+          <ul className="flex items-center gap-x-8 text-[#0f172a] dark:text-slate-300">
+            <ModeToggle />
             <li>
               <Link
                 href="/about"

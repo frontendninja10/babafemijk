@@ -4,7 +4,7 @@ import GithubCalendarComponent from "@/components/GithubCalendarComponent";
 
 export default async function Home() {
   return (
-    <main>
+    <main className="dark:bg-[#121212]">
       <Header />
       <GithubCalendarComponent />
       <Job />

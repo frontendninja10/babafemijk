@@ -215,3 +215,25 @@ table {
   padding: 2px 4px; /* Optional: padding for better visibility */
   border-radius: 4px; /* Optional: rounded corners */
 }
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out ease-in-out;
+}
