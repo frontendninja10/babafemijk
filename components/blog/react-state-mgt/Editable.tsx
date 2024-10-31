@@ -1,4 +1,4 @@
-import { useState } from "react";
+"use client";
 import {
   Sandpack,
   SandpackProvider,
@@ -6,9 +6,32 @@ import {
   SandpackPreview,
 } from "@codesandbox/sandpack-react";
 
-import { aquaBlue } from "@codesandbox/sandpack-themes";
+import {
+  aquaBlue,
+  amethyst,
+  atomDark,
+  dracula,
+  freeCodeCampDark,
+  gruvboxDark,
+} from "@codesandbox/sandpack-themes";
+
+import { useTheme } from "next-themes";
+import { useState } from "react";
+import { useEffect } from "react";
 
 export default function Editable() {
+  const { theme, systemTheme } = useTheme();
+  const [serverTheme, setServerTheme] = useState<"light" | "dark" | undefined>(
+    undefined
+  );
+  const scheme =
+    theme === "light" ? "light" : theme === "dark" ? "dark" : systemTheme;
+
+  // Set theme only after rendering to avoid mismatch between client and server
+  // https://github.com/vercel/next.js/issues/10608#issuecomment-589073831
+  useEffect(() => {
+    setServerTheme(scheme);
+  }, [scheme]);
   const files = {
     "App.js": ` import "./style.css";
     export default function BankApp() {
@@ -78,12 +101,11 @@ let balance = 1000000;
         background-color: #f0f0f0;
         margin: 0;
         padding: 0;
-        
         height: 100vh;
     }
 
     .container {
-        background-color: white;
+        background-color: #fafafa;
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -131,7 +153,7 @@ let balance = 1000000;
         editorHeight: 500,
         rtl: true,
       }}
-      theme={aquaBlue}
+      theme={serverTheme === "dark" ? freeCodeCampDark : aquaBlue}
     />
   );
 }

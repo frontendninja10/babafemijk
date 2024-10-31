@@ -9,11 +9,13 @@ export default async function Achievements() {
     <section className="py-10 lg:mt-24 max-w-6xl mx-auto px-6 mt-20">
       <section className="max-w-4xl mb-16">
         <h1
-          className={` text-[#1d2f6f] text-3xl font-semibold tracking-tight lg:text-5xl mb-6 lg:leading-[3.7rem] leading-tight`}
+          className={` text-[#1d2f6f] text-3xl font-semibold tracking-tight lg:text-5xl mb-6 lg:leading-[3.7rem] leading-tight dark:text-slateBlue`}
         >
           Achievements
         </h1>
-        <p className={`text-base text-slate-500 leading-relaxed`}>
+        <p
+          className={`text-base text-slate-500 leading-relaxed dark:text-paleLavender`}
+        >
           Here are some of my achievements and certifications I&apos;ve earned.
         </p>
       </section>
@@ -27,7 +29,7 @@ export default async function Achievements() {
               height={460}
               className="rounded-xl border transition-all duration-300 hover:scale-105"
             />
-            <h3 className="text-xl font-semibold text-center mt-4 text-slate-500">
+            <h3 className="text-md font-semibold text-center mt-4 text-slate-500 dark:text-paleLavender">
               {achievement.achievementTitle}
             </h3>
           </div>

@@ -136,7 +136,7 @@
 }
 
 .prose p {
-  @apply my-4 text-slate-600 dark:text-neutral-200;
+  @apply my-4 text-slate-600 dark:text-paleLavender;
 }
 
 .prose h1 {
@@ -160,11 +160,11 @@
 }
 
 .prose ul {
-  @apply list-disc text-slate-600 pl-14;
+  @apply list-disc text-slate-600 pl-14 dark:text-paleLavender;
 }
 
 .prose ol {
-  @apply list-decimal pl-6;
+  @apply list-decimal pl-6 dark:text-paleLavender;
 }
 
 .prose > :first-child {
@@ -215,9 +215,15 @@ table {
 .inline-code {
   font-family: "Fira Code", monospace;
   font-weight: 500;
-  background-color: #f0f0f0; /* Optional: background color */
+  background-color: #d9d9d9; /* Optional: background color */
   padding: 2px 4px; /* Optional: padding for better visibility */
   border-radius: 4px; /* Optional: rounded corners */
+  color: #1d2f6f;
+  font-size: 0.9em;
+}
+
+.inline-code-dark {
+  background-color: #1d2f6f;
 }
 
 @keyframes shake {

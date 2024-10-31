@@ -24,7 +24,7 @@ export default function BankApp() {
   };
 
   return (
-    <div className="bg-white max-w-sm mx-auto p-4 lg:p-6 lg:max-w-3xl lg:ml-0 rounded-lg border-2 border-gray-300">
+    <div className="bg-white max-w-sm mx-auto p-4 lg:p-6 lg:max-w-3xl lg:ml-0 rounded-lg border-2 border-gray-300 dark:bg-slate-800 dark:border-slate-700">
       <div className="flex items-center justify-between gap-2">
         <h3 className="text-lg font-semibold">Welcome back</h3>
         {/* <CircleUserRound /> */}
