@@ -27,7 +27,7 @@ export default async function Header() {
         profile.map((data) => (
           <div key={data._id} className="max-w-2xl">
             <h1
-              className={`${openSans.className} text-4xl text-[#1d2f6f] font-semibold tracking-normal lg:text-6xl mb-6 lg:leading-20 lg:min-w-[400px] min-w-full dark:text-slate-300  `}
+              className={`${openSans.className} text-4xl text-[#1d2f6f] font-semibold tracking-normal lg:text-6xl mb-6 lg:leading-20 lg:min-w-[400px] min-w-full dark:text-slateBlue`}
             >
               {/* {data.headline} */}
               {/* <span className="bg-gradient-to-r from-[#21b1ff] to-[#ff218c] bg-clip-text text-transparent">
@@ -36,7 +36,7 @@ export default async function Header() {
               Frontend Software Engineer & Tech Writer
             </h1>
             <p
-              className={`${openSans.className} text-base mb-10 text-slate-500 leading-relaxed dark:text-slate-300`}
+              className={`${openSans.className} text-base mb-10 text-slate-500 leading-relaxed dark:text-paleLavender`}
             >
               {data.shortBio}
             </p>
@@ -53,10 +53,10 @@ export default async function Header() {
                   <li key={value.id}>
                     <Link
                       href={value.url}
-                      className="flex items-center border-b dark:border-b-zinc-800 border-zinc-200 group dark:text-slate-300"
+                      className="flex items-center border-b dark:border-b-zinc-800 border-zinc-200 group dark:text-[#6a5acd]"
                     >
                       <value.icon
-                        className="flex-shrink-0 h-5 w-5 text-[#1d2f6f] group-hover:dark:text-white group-hover:text-zinc-800 duration-300 dark:text-slate-300"
+                        className="flex-shrink-0 h-5 w-5 text-[#1d2f6f] group-hover:dark:text-white group-hover:text-zinc-800 duration-300 dark:text-[#6a5acd]"
                         aria-hidden="true"
                       />{" "}
                       &nbsp;

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { getGitHubYears } from "@/lib/utils";
 import { github } from "@/lib/data/contribution-graph-theme";
 import YearButton from "./YearButton";
+import { useTheme } from "next-themes";
 
 export default function ContributionGraph() {
   const [calendarYear, setCalendarYear] = useState<number | undefined>(
@@ -15,13 +16,15 @@ export default function ContributionGraph() {
   const joinYear = Number(process.env.NEXT_PUBLIC_GITHUB_JOIN_YEAR);
   const years = getGitHubYears(joinYear);
 
+  const { theme } = useTheme();
+
   return (
     <div className="flex xl:flex-row flex-col gap-4">
-      <div className="dark:bg-primary-bg border dark:border-zinc-800 border-zinc-200 p-8 rounded-lg max-w-fit max-h-fit">
+      <div className="dark:bg-primary-bg border dark:border-slate-800 border-zinc-200 p-8 rounded-lg max-w-fit max-h-fit">
         <GitHubCalendar
           username={username!}
           theme={github}
-          colorScheme={"light"}
+          colorScheme={theme === "dark" ? "dark" : "light"}
           blockSize={14}
           year={calendarYear}
         />

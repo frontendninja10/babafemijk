@@ -40,6 +40,10 @@
     --sh-entity: #d35400; /* Pumpkin */
   }
 
+  body {
+    @apply dark:bg-[#0b0c1f];
+  }
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;

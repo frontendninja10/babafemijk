@@ -34,7 +34,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <Link href="/">
           {/* <Image src={Logo} width={25} height={25} alt="logo" /> */}
-          <h2 className="font-bold text-lg text-[#1d2f6f] dark:text-slate-300">
+          <h2 className="font-bold text-lg text-[#1d2f6f] dark:text-[#6a5acd]">
             BJK
           </h2>
           {/* <svg
@@ -74,38 +74,46 @@ export default function Navbar() {
           </svg> */}
         </Link>
         <div className="lg:block hidden ml-auto">
-          <ul className="flex items-center gap-x-8 text-[#0f172a] dark:text-slate-300">
+          <ul className="flex items-center gap-x-8 text-[#0f172a] dark:text-[#6a5acd]">
             <ModeToggle />
             <li>
               <Link
                 href="/about"
-                className="hover:text-[#161960] duration-200 hover:underline"
+                className="relative inline-block duration-1000"
               >
-                About
+                <span className="border-b-2 border-transparent hover:border-[#6a5acd] transition-colors">
+                  About
+                </span>
               </Link>
             </li>
             <li>
               <Link
                 href="/projects"
-                className="hover:text-[#161960] duration-200 hover:underline"
+                className="relative inline-block duration-1000"
               >
-                Projects
+                <span className="border-b-2 border-transparent hover:border-[#6a5acd] transition-colors">
+                  Projects
+                </span>
               </Link>
             </li>
             <li>
               <Link
                 href="/achievements"
-                className="hover:text-[#161960] duration-200 hover:underline"
+                className="relative inline-block duration-1000"
               >
-                Achievements
+                <span className="border-b-2 border-transparent hover:border-[#6a5acd] transition-colors">
+                  Achievements
+                </span>
               </Link>
             </li>
             <li>
               <Link
                 href="/blog"
-                className="hover:text-[#161960] duration-200 hover:underline"
+                className="relative inline-block duration-1000"
               >
-                Blog
+                <span className="border-b-2 border-transparent hover:border-[#6a5acd] transition-colors">
+                  Blog
+                </span>
               </Link>
             </li>
           </ul>
