@@ -108,6 +108,16 @@ export default function Navbar() {
             </li>
             <li>
               <Link
+                href="/events"
+                className="relative inline-block duration-1000"
+              >
+                <span className="border-b-2 border-transparent hover:border-[#6a5acd] transition-colors">
+                  Events
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/blog"
                 className="relative inline-block duration-1000"
               >
@@ -135,6 +145,7 @@ export default function Navbar() {
                     { href: "/about", text: "About" },
                     { href: "/projects", text: "Projects" },
                     { href: "/achievements", text: "Achievements" },
+                    { href: "/events", text: "Events" },
                     { href: "/blog", text: "Blog" },
                   ].map((link, index) => (
                     <li key={index} className={index > 0 ? "pt-7" : ""}>

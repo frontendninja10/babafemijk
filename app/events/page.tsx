@@ -18,12 +18,12 @@ export default async function Events() {
     <section className="py-10 lg:mt-24 max-w-6xl mx-auto px-6">
       <section className="max-w-4xl mb-16">
         <h1
-          className={`${openSans.className} text-[#1d2f6f] text-3xl font-semibold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight`}
+          className={`${openSans.className} text-[#1d2f6f] text-3xl font-semibold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight dark:text-slateBlue`}
         >
           Events I&apos;ve Attended
         </h1>
         <p
-          className={`${openSans.className} text-base text-slate-500 leading-relaxed`}
+          className={`${openSans.className} text-base text-slate-500 leading-relaxed dark:text-paleLavender`}
         >
           I love to attend events and conferences to learn and network with
           other professionals in the industry. Here are some of the events
@@ -40,7 +40,7 @@ export default async function Events() {
               height={460}
               className="rounded-xl border transition-all duration-300 hover:scale-105"
             />
-            <p className="text-sm text-center mt-4 font-bold">
+            <p className="text-sm text-center mt-4 font-bold dark:text-paleLavender">
               {event.caption}
             </p>
           </div>
