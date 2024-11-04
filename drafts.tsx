@@ -2,7 +2,7 @@ const createCar = () => {
   const car = {};
 
   const addCarProperty = (id: string, value: string) => {
-    car[id] = value;
+    // car[id] = value;
   };
 
   return {
@@ -13,7 +13,7 @@ const createCar = () => {
 
 // We can ensure some type safety by typing the parameters of the 'addCarProperty' function
 const addCarProperty = (id: string, value: string) => {
-  car[id] = value;
+  //   car[id] = value;
 };
 // Now the function is a bit type safe because we have typed its parameters, but TypeScript is still unhappy because the object
 // the function is trying to manipulate is not type safe.
