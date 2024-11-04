@@ -15,10 +15,10 @@ export default async function Events() {
   console.log(sortedEvents);
 
   return (
-    <section className="py-10 lg:mt-24 max-w-6xl mx-auto px-6">
+    <section className="py-10 max-w-6xl mx-auto px-6">
       <section className="max-w-4xl mb-16">
         <h1
-          className={`${openSans.className} text-[#1d2f6f] text-3xl font-semibold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight dark:text-slateBlue`}
+          className={`${openSans.className} text-[#1d2f6f] text-3xl font-semibold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight dark:text-slateBlue pt-20`}
         >
           Events I&apos;ve Attended
         </h1>
