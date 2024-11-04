@@ -13,7 +13,15 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { useState } from "react";
-import { X } from "lucide-react";
+import {
+  X,
+  HousePlus,
+  Signature,
+  GitBranch,
+  Trophy,
+  PlaneTakeoff,
+  LibraryBig,
+} from "lucide-react";
 import { usePathname } from "next/navigation";
 import ModeToggle from "@/components/ui/mode-toggle";
 
@@ -134,24 +142,59 @@ export default function Navbar() {
             <Menu className="lg:hidden" />
           </DrawerTrigger>
           <DrawerContent className="flex flex-col justify-start items-center p-6">
-            <DrawerClose className="self-end">
-              <X className="w-8 h-8" />
-            </DrawerClose>
+            <div className="flex items-center align-middle bg-slate-200 w-full justify-between px-4 rounded-md py-2 dark:bg-slate-400">
+              <ModeToggle />
+              <DrawerClose className="">
+                <X className="w-8 h-8 text-white dark:text-black" />
+              </DrawerClose>
+            </div>
             <DrawerHeader>
               <DrawerDescription>
-                <ul className="flex mt-20 flex-col divide-y items-center">
+                <ul className="flex mt-20 flex-col items-start w-full">
                   {[
-                    { href: "/", text: "Home" },
-                    { href: "/about", text: "About" },
-                    { href: "/projects", text: "Projects" },
-                    { href: "/achievements", text: "Achievements" },
-                    { href: "/events", text: "Events" },
-                    { href: "/blog", text: "Blog" },
+                    {
+                      href: "/",
+                      text: "Home",
+                      icon: <HousePlus className="w-4 h-4" />,
+                    },
+                    {
+                      href: "/about",
+                      text: "About",
+                      icon: <Signature className="w-4 h-4" />,
+                    },
+                    {
+                      href: "/projects",
+                      text: "Projects",
+                      icon: <GitBranch className="w-4 h-4" />,
+                    },
+                    {
+                      href: "/achievements",
+                      text: "Achievements",
+                      icon: <Trophy className="w-4 h-4" />,
+                    },
+                    {
+                      href: "/events",
+                      text: "Events",
+                      icon: <PlaneTakeoff className="w-4 h-4" />,
+                    },
+                    {
+                      href: "/blog",
+                      text: "Blog",
+                      icon: <LibraryBig className="w-4 h-4" />,
+                    },
                   ].map((link, index) => (
-                    <li key={index} className={index > 0 ? "pt-7" : ""}>
+                    <li
+                      key={index}
+                      className={
+                        index > 0
+                          ? "pt-7 flex items-center"
+                          : "flex items-center"
+                      }
+                    >
+                      {link.icon}
                       <Link
                         href={link.href}
-                        className="hover:text-[#161960] text-xl duration-200 hover:underline"
+                        className="hover:text-[#161960] text-xl duration-200 pl-2"
                         onClick={closeDrawer}
                       >
                         {link.text}
