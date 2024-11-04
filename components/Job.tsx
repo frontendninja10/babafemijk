@@ -23,7 +23,7 @@ export default async function Job() {
   return (
     <section className="lg:mt-28 mt-16 max-w-6xl mx-auto px-6">
       <div className="mb-16">
-        <h2 className="font-semibold lg:text-4xl text-3xl mb-4 text-[#1d2f6f]">
+        <h2 className="font-semibold lg:text-4xl text-3xl mb-4 text-[#1d2f6f] dark:text-slateBlue">
           Work Experience
         </h2>
       </div>
@@ -38,7 +38,7 @@ export default async function Job() {
               <a
                 href={data.url}
                 rel="noreferrer noopener"
-                className="min-h-[60px] min-w-[60px] rounded-md overflow-clip relative grid place-items-center p-2 bg-zinc-100"
+                className="min-h-[60px] min-w-[60px] rounded-md overflow-clip relative grid place-items-center p-2 bg-zinc-100 dark:bg-[#0b0c1f]"
               >
                 <Image
                   src={data.logo}
@@ -49,11 +49,11 @@ export default async function Job() {
                 />
               </a>
               <div className="flex flex-col items-start">
-                <h3 className="text-xl font-bold text-[#161960]">
+                <h3 className="text-xl font-bold text-[#161960] dark:text-slateBlue">
                   {data.name}
                 </h3>
-                <p>{data.jobTitle}</p>
-                <time className="text-sm text-zinc-500 mt-2 tracking-wider uppercase">
+                <p className="dark:text-paleLavender">{data.jobTitle}</p>
+                <time className="text-sm text-zinc-500 mt-2 tracking-wider uppercase dark:text-paleLavender">
                   {formatDate(data.startDate)} -{" "}
                   {data.endDate ? (
                     formatDate(data.endDate)
@@ -63,7 +63,9 @@ export default async function Job() {
                     </span>
                   )}
                 </time>
-                <p className={`text-base text-slate-500 my-4 leading-relaxed`}>
+                <p
+                  className={`text-base text-slate-500 my-4 leading-relaxed dark:text-paleLavender`}
+                >
                   {data.description}
                 </p>
               </div>

@@ -6,6 +6,7 @@ import Footer from "@/components/global/Footer";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Open_Sans } from "next/font/google";
+import { ThemeProvider } from "@/components/ui/theme-provider";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -23,11 +24,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${openSans.className} bg-slate-100`}>
-        <Navbar />
-        {children}
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

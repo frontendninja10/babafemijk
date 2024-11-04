@@ -40,6 +40,10 @@
     --sh-entity: #d35400; /* Pumpkin */
   }
 
+  body {
+    @apply dark:bg-[#0b0c1f];
+  }
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -132,7 +136,7 @@
 }
 
 .prose p {
-  @apply my-4 text-slate-600 dark:text-neutral-200;
+  @apply my-4 text-slate-600 dark:text-paleLavender;
 }
 
 .prose h1 {
@@ -156,11 +160,11 @@
 }
 
 .prose ul {
-  @apply list-disc text-slate-600 pl-14;
+  @apply list-disc text-slate-600 pl-14 dark:text-paleLavender;
 }
 
 .prose ol {
-  @apply list-decimal pl-6;
+  @apply list-decimal pl-6 dark:text-paleLavender;
 }
 
 .prose > :first-child {
@@ -211,7 +215,35 @@ table {
 .inline-code {
   font-family: "Fira Code", monospace;
   font-weight: 500;
-  background-color: #f0f0f0; /* Optional: background color */
+  background-color: #d9d9d9; /* Optional: background color */
   padding: 2px 4px; /* Optional: padding for better visibility */
   border-radius: 4px; /* Optional: rounded corners */
+  color: #1d2f6f;
+  font-size: 0.9em;
+}
+
+.inline-code-dark {
+  background-color: #1d2f6f;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out ease-in-out;
 }

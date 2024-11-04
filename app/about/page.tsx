@@ -35,11 +35,11 @@ export default async function About() {
                   I&apos;m {data.fullName}. I live in {data.location}, where I
                   design the future.
                 </h1> */}
-                <h1 className="lg:text-5xl text-4xl lg:leading-tight basis-1/2 font-bold mb-8 text-[#1d2f6f]">
-                  From Nigeria to the world! 🚀
+                <h1 className="lg:text-5xl text-4xl lg:leading-tight basis-1/2 font-bold mb-8 text-[#1d2f6f] dark:text-slateBlue">
+                  From Nigeria to the world!
                 </h1>
 
-                <div className="flex flex-col gap-y-3 text-slate-600 leading-relaxed">
+                <div className="flex flex-col gap-y-3 text-slate-600 leading-relaxed dark:text-paleLavender">
                   <PortableText value={data.fullBio} />
                 </div>
               </div>
@@ -57,7 +57,7 @@ export default async function About() {
 
                   <a
                     href={`${data.resumeURL}?dl=${data.fullName}_resume.pdf`}
-                    className="flex items-center justify-center gap-x-2 border-2 border-[#1d2f6f] hover:bg-[#1d2f6f] hover:text-white rounded-md duration-200 py-2 text-center text-[#1d2f6f] font-semibold"
+                    className="flex items-center justify-center gap-x-2 border-2 border-[#1d2f6f] hover:bg-[#1d2f6f] hover:text-white rounded-md duration-200 py-2 text-center text-[#1d2f6f] font-semibold dark:border-slateBlue dark:hover:bg-slateBlue dark:hover:text-white dark:text-paleLavender"
                   >
                     <BiFile className="text-base" /> Download Resumé
                   </a>
@@ -67,7 +67,7 @@ export default async function About() {
                   <li>
                     <a
                       href={`mailto:${data.email}`}
-                      className="flex items-center gap-x-2 hover:text-purple-400 duration-300"
+                      className="flex items-center gap-x-2 hover:text-purple-400 duration-300 dark:hover:text-slateBlue dark:text-paleLavender"
                     >
                       <BiEnvelope className="text-lg" />
                       {data.email}
@@ -78,19 +78,19 @@ export default async function About() {
             </section>
 
             <section className="mt-24 max-w-2xl">
-              <h2 className="font-semibold text-4xl mb-4 text-[#1d2f6f]">
+              <h2 className="font-semibold text-4xl mb-4 text-[#1d2f6f] dark:text-slateBlue">
                 Technologies
               </h2>
-              <p className="text-slate-600 max-w-lg">
+              <p className="text-slate-600 max-w-lg dark:text-paleLavender">
                 I&apos;ve spent few years working on my skills. In no particular
                 order, here are a few of them.
               </p>
 
-              <ul className="flex flex-wrap max-w-lg items-center gap-3 mt-8">
+              <ul className="list-disc pl-5 ml-5 mt-4">
                 {data.skills?.map((skill, id) => (
                   <li
                     key={id}
-                    className="bg-[#1d2f6f] border border-transparent text-white hover:border-zinc-700 rounded-md px-2 py-1"
+                    className="text-slate-600 dark:text-paleLavender"
                   >
                     {skill}
                   </li>

@@ -27,12 +27,12 @@ export default async function Project() {
     >
       <section className="max-w-2xl mb-16">
         <h1
-          className={`${openSans.className} text-[#1d2f6f] text-3xl font-semibold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight`}
+          className={`${openSans.className} text-[#1d2f6f] text-3xl font-semibold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight dark:text-slateBlue`}
         >
           Welcome to my Projects Showcase
         </h1>
         <p
-          className={`${openSans.className} text-base text-slate-500 leading-relaxed`}
+          className={`${openSans.className} text-base text-slate-500 leading-relaxed dark:text-paleLavender`}
         >
           Here you&apos;ll find a curated selection of projects that represent
           my best work and showcase my skills as a developer. From fintech
@@ -47,7 +47,7 @@ export default async function Project() {
           <Link
             href={`/projects/${project.slug}`}
             key={project._id}
-            className="group flex items-center gap-x-4 bg-gradient-to-br from-white to-slate-50 border-2 border-slate-200 hover:border-indigo-300 p-4 rounded-xl transition-all duration-300 ease-in-out hover:shadow-md"
+            className="group flex items-center gap-x-4 border-2 border-slate-200 hover:border-indigo-300 p-4 rounded-xl transition-all duration-300 ease-in-out hover:shadow-md dark:border-slate-800 dark:hover:border-slateBlue"
           >
             <div className="relative w-[50px] h-[50px]">
               {/* <div className="absolute inset-0 bg-slate-100 rounded-lg transform -rotate-6 transition-transform group-hover:rotate-3"></div> */}
@@ -60,10 +60,12 @@ export default async function Project() {
               />
             </div>
             <div>
-              <h2 className="font-bold text-lg text-slate-800 mb-1">
+              <h2 className="font-bold text-lg text-slate-800 mb-1 dark:text-slateBlue">
                 {project.name}
               </h2>
-              <div className={`${openSans.className} text-sm text-slate-600`}>
+              <div
+                className={`${openSans.className} text-sm text-slate-600 dark:text-paleLavender`}
+              >
                 {project.tagline}
               </div>
             </div>

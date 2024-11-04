@@ -1,5 +1,5 @@
 // sanity/sanity.client.ts
-import "server-only";
+// import "server-only";
 import {
   createClient,
   type ClientConfig,
