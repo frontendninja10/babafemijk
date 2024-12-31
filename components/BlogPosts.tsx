@@ -26,7 +26,7 @@ export function BlogPosts() {
               <p className="text-slate-700 w-[100px] tabular-nums dark:text-paleLavender">
                 {formatDate(post.metadata.publishedAt, false)}
               </p>
-              <p className="text-slate-700 tracking-tight dark:text-paleLavender">
+              <p className="text-slate-700 tracking-tight dark:text-paleLavender underline">
                 {post.metadata.title}
               </p>
             </div>
