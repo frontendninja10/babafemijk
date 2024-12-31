@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function Blog() {
   return (
-    <div>
+    <div className="h-fit">
       <section className="py-10 px-4 lg:mt-24 max-w-6xl mx-auto mt-20">
         <div className="flex items-center gap-x-2">
           <h1
