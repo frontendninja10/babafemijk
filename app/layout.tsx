@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Karla } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/global/Navbar";
 import Footer from "@/components/global/Footer";
@@ -11,6 +11,12 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 const openSans = Open_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const karla = Karla({
+  subsets: ["latin"],
+  weight: ["200", "400", "500", "600", "700", "800"],
+  variable: "--font-karla",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${openSans.className} bg-slate-100`}>
+      <body className={`${karla.className} bg-slate-100`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

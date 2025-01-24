@@ -5,14 +5,9 @@ import Link from "next/link";
 import { HeroSvg } from "@/components/HeroSvg";
 import { Open_Sans } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
-import { Poppins } from "next/font/google";
+import { Karla } from "next/font/google";
 
 // import { ScaleButton } from "./animations/animations";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -22,21 +17,17 @@ const openSans = Open_Sans({
 export default async function Header() {
   const profile: ProfileType[] = await getProfile();
   return (
-    <header className="max-w-6xl lg:pt-52 lg:pb-32 pt-32 mx-auto px-6 flex flex-col lg:flex-row lg:p-0 lg:items-center lg:justify-between dark:text-white">
+    <header className="max-w-6xl font-karla lg:pt-52 lg:pb-32 pt-32 mx-auto px-6 flex flex-col lg:flex-row lg:p-0 lg:items-center lg:justify-between dark:text-white">
       {profile &&
         profile.map((data) => (
           <div key={data._id} className="max-w-2xl">
             <h1
-              className={`${openSans.className} text-4xl text-[#1d2f6f] font-semibold tracking-normal lg:text-6xl mb-6 lg:leading-20 lg:min-w-[400px] min-w-full dark:text-slateBlue`}
+              className={`text-4xl text-[#1d2f6f] font-semibold tracking-normal lg:text-6xl mb-6 lg:leading-20 lg:min-w-[400px] min-w-full dark:text-slateBlue`}
             >
-              {/* {data.headline} */}
-              {/* <span className="bg-gradient-to-r from-[#21b1ff] to-[#ff218c] bg-clip-text text-transparent">
-                Frontend {""}
-              </span> */}
               Frontend Software Engineer & Tech Writer
             </h1>
             <p
-              className={`${openSans.className} text-base mb-10 text-slate-500 leading-relaxed dark:text-paleLavender`}
+              className={`text-base mb-10 text-slate-500 leading-relaxed dark:text-paleLavender`}
             >
               {data.shortBio}
             </p>

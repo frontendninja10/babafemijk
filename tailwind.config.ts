@@ -80,6 +80,9 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         tilt: "tilt 3s ease-in-out infinite",
       },
+      fontFamily: {
+        karla: ["var(--font-karla)"],
+      },
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
