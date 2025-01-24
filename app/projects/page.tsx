@@ -23,16 +23,16 @@ export default async function Project() {
 
   return (
     <main
-      className={`max-w-7xl mx-auto md:px-16 px-6 lg:mt-44 mt-32 ${openSans.className}`}
+      className={`max-w-7xl mx-auto md:px-16 px-6 lg:mt-44 mt-32 font-karla`}
     >
       <section className="max-w-2xl mb-16">
         <h1
-          className={`${openSans.className} text-[#1d2f6f] text-3xl font-semibold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight dark:text-slateBlue`}
+          className={`text-[#1d2f6f] text-3xl font-semibold tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight dark:text-slateBlue`}
         >
           Welcome to my Projects Showcase
         </h1>
         <p
-          className={`${openSans.className} text-base text-slate-500 leading-relaxed dark:text-paleLavender`}
+          className={`text-base text-slate-500 leading-relaxed dark:text-paleLavender`}
         >
           Here you&apos;ll find a curated selection of projects that represent
           my best work and showcase my skills as a developer. From fintech
@@ -63,9 +63,7 @@ export default async function Project() {
               <h2 className="font-bold text-lg text-slate-800 mb-1 dark:text-slateBlue">
                 {project.name}
               </h2>
-              <div
-                className={`${openSans.className} text-sm text-slate-600 dark:text-paleLavender`}
-              >
+              <div className={`text-sm text-slate-600 dark:text-paleLavender`}>
                 {project.tagline}
               </div>
             </div>
