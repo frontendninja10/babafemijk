@@ -1,12 +1,16 @@
 import Link from "next/link";
-import { formatDate, getBlogPosts } from "@/app/blog/utils";
+import {
+  calculateReadingTime,
+  formatDate,
+  getBlogPosts,
+} from "@/app/blog/utils";
 import { Dot } from "lucide-react";
 
 export function BlogPosts() {
   let allBlogs = getBlogPosts();
   // console.log(allBlogs);
   return (
-    <div>
+    <div className="mt-20">
       {allBlogs
         .sort((a, b) => {
           if (
@@ -19,17 +23,18 @@ export function BlogPosts() {
         .map((post) => (
           <Link
             key={post.slug}
-            className="flex space-y-1 mb-4"
             href={`/blog/${post.slug}`}
+            className="w-full flex items-center gap-6 dark:text-paleLavender border-b-[1px] border-paleLavender mb-4 max-w-[70%] mx-auto"
           >
-            <div className="w-full flex items-center space-x-[10px] lg:space-x-0 dark:text-paleLavender">
-              <p className="text-slate-700 w-[100px] tabular-nums dark:text-paleLavender">
-                {formatDate(post.metadata.publishedAt, false)}
-              </p>
-              <p className="text-slate-700 tracking-tight dark:text-paleLavender underline">
-                {post.metadata.title}
-              </p>
-            </div>
+            <p className="text-slate-700 tabular-nums dark:text-paleLavender w-[120px] shrink-0 text-left">
+              {formatDate(post.metadata.publishedAt, false)}
+            </p>
+            <p className="text-slate-700 tracking-tight dark:text-paleLavender">
+              {post.metadata.title}
+            </p>
+            <p className="text-slate-700 dark:text-paleLavender text-sm ml-auto">
+              {calculateReadingTime(post.content)} min read
+            </p>
           </Link>
         ))}
     </div>
