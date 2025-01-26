@@ -175,10 +175,11 @@
 
 .prose code {
   font-family: "Fira Code", monospace;
+  font-size: 14px;
 }
 
 .prose pre {
-  @apply py-6 px-6;
+  @apply py-3 px-6;
   background-color: #334155;
 }
 
