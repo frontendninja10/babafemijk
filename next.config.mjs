@@ -8,6 +8,11 @@ export const images = {
       hostname: "cdn.sanity.io",
       port: "",
     },
+    {
+      protocol: "https",
+      hostname: "res.cloudinary.com",
+      pathname: "/dezx6ryl0/**",
+    },
   ],
 };
 

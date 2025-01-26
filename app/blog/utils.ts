@@ -52,38 +52,54 @@ export function getBlogPosts() {
   return getMDXData(path.join(process.cwd(), "app", "blog", "posts"));
 }
 
-export function formatDate(date: string, includeRelative = false) {
-  let currentDate = new Date();
-  if (!date.includes("T")) {
-    date = `${date}T00:00:00`;
-  }
-  let targetDate = new Date(date);
+// export function formatDate(date: string, includeRelative = false) {
+//   let currentDate = new Date();
+//   if (!date.includes("T")) {
+//     date = `${date}T00:00:00`;
+//   }
+//   let targetDate = new Date(date);
 
-  let yearsAgo = currentDate.getFullYear() - targetDate.getFullYear();
-  let monthsAgo = currentDate.getMonth() - targetDate.getMonth();
-  let daysAgo = currentDate.getDate() - targetDate.getDate();
+//   let yearsAgo = currentDate.getFullYear() - targetDate.getFullYear();
+//   let monthsAgo = currentDate.getMonth() - targetDate.getMonth();
+//   let daysAgo = currentDate.getDate() - targetDate.getDate();
 
-  let formattedDate = "";
+//   let formattedDate = "";
 
-  if (yearsAgo > 0) {
-    formattedDate = `${yearsAgo}y ago`;
-  } else if (monthsAgo > 0) {
-    formattedDate = `${monthsAgo}mo ago`;
-  } else if (daysAgo > 0) {
-    formattedDate = `${daysAgo}d ago`;
-  } else {
-    formattedDate = "Today";
-  }
+//   if (yearsAgo > 0) {
+//     formattedDate = `${yearsAgo}y ago`;
+//   } else if (monthsAgo > 0) {
+//     formattedDate = `${monthsAgo}mo ago`;
+//   } else if (daysAgo > 0) {
+//     formattedDate = `${daysAgo}d ago`;
+//   } else {
+//     formattedDate = "Today";
+//   }
 
-  let fullDate = targetDate.toLocaleString("en-us", {
+//   let fullDate = targetDate.toLocaleString("en-us", {
+//     month: "short",
+//     day: "numeric",
+//     year: "numeric",
+//   });
+
+//   if (!includeRelative) {
+//     return fullDate;
+//   }
+
+//   return `${fullDate} (${formattedDate})`;
+// }
+
+export function formatDate(date: string, includeYear: boolean = false): string {
+  const options: Intl.DateTimeFormatOptions = {
     month: "short",
     day: "numeric",
-    year: "numeric",
-  });
+    ...(includeYear && { year: "numeric" }),
+  };
 
-  if (!includeRelative) {
-    return fullDate;
-  }
+  return new Date(date).toLocaleDateString("en-US", options);
+}
 
-  return `${fullDate} (${formattedDate})`;
+export function calculateReadingTime(content: string): number {
+  const wordsPerMinute = 200;
+  const words = content.trim().split(/\s+/).length;
+  return Math.ceil(words / wordsPerMinute);
 }

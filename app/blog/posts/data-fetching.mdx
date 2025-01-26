@@ -1,0 +1,284 @@
+---
+title: "A beginner's guide to data fetching in React"
+publishedAt: "2025-01-26"
+summary: "Learn how to fetch and display data in React components using the Fetch API and useEffect hook."
+---
+
+import Image from "next/image";
+
+<Image
+  src="https://res.cloudinary.com/dezx6ryl0/image/upload/v1710796448/cld-sample-2.jpg"
+  alt="Data fetching in React"
+  width={800}
+  height={400}
+  style={{ maxWidth: "100%", height: "auto" }}
+  priority
+/>
+;
+
+With enough repetition and practice, difficult things can turn out to be the
+easiest things.
+
+One of such is data fetching in React. This blog post is for React developers who do not understand the flow of data in React,
+especially from external sources like API endpoints. This post is not to turn you into a data fetching wizard in React overnight,
+but to give you a simple overview of what you need to feed a react component with data and how to seamlessly display it in your UI.
+
+### Table of Contents
+
+- [How do I fetch data in JavaScript](#how-do-i-fetch-data-in-javascript-)
+- [Where do I fetch data](#where-do-i-fetch-data-)
+- [Now that we have our data](#now-that-we-have-our-data-)
+- [What to do next](#what-to-do-next-)
+
+<br />
+
+### How do I fetch data in JavaScript
+
+---
+
+The answer is pretty much in the question. JavaScript provides a native API for fetching data into your code.
+If you skipped this while learning JavaScript, well here’s another opportunity to learn about it again.
+
+**The Fetch API**
+
+While there are various other tools, libraries for fetching data, we’d be considering JavaScript’s native API for fetching.
+This API is called the fetch API, very obvious right. 😅
+
+JavaScript allows you to send network requests to the server and fetches the results or data from the server using the <span className='inline-code'>fetch()</span> method.
+To do this, you’ll write some syntax like this:
+
+```jsx
+fetch(url, [options]);
+```
+
+<br />
+You’ll want to store the result from this network request inside a variable, so
+let’s take it a step further by writing something like this:
+
+```jsx
+// Store fetch result inside a variable
+let response = await fetch(url, [options]);
+```
+
+<br />
+Now, here are a few things you need to know:
+
+- the <span className='inline-code'>url</span> is where you want to access the resource from or make a request to. This could be a request to load users from a database or a request to submit details from a sign up form.
+- the <span className='inline-code'>options</span> is a bunch of optional parameters you can send alongside your request. For the purpose of this example, we would not be discussing that.
+- you can send a fetch request without the <span className='inline-code'>options</span>.
+- the <span className='inline-code'>fetch</span> method returns a _promise._
+- A promise is a placeholder for a value that would be available in future.
+- And because of that, we need to wait for the result of the _promise_ by using the <span className='inline-code'>await</span> keyword.
+
+A promise in JavaScript is like a promise in real life. If you do not _wait_ for a promise made to you, you lose the result of the promise.
+
+That’s exactly what we’re doing by _awaiting_ the result of the promise returned by the <span className='inline-code'>fetch</span> method.
+
+There’s a few more things to understand about promises but I’d prefer not to digress too much. Let’s focus on the main task: data fetching in a react component.
+
+Write this code into this sandbox and take a look at what’s returned in the console:
+
+> 💡Write this code line by line to build some muscle memory.
+
+```jsx
+// Write function to fetch users from server
+const fetchUsers = async () => {
+  const response = await fetch("https://randomuser.me/api/?results=10");
+  const data = await response.json();
+  console.log(data.results);
+};
+
+// Call the function
+fetchUsers();
+```
+
+<br />
+Let’s analyze this step-by-step, shall we?
+
+This code simply defines an <span className='inline-code'>asynchronous</span> function and stores it inside the <span className='inline-code'>fetchUsers</span> variable.
+
+- The <span className='inline-code'>async</span> keyword is used to mark functions that are asynchronous in nature.
+- Asynchronous functions are useful when dealing with tasks that take time to complete, like fetching data over a server.
+
+We have discussed above what it means to <span className='inline-code'>await</span> the result of the fetch call.
+
+In the next line, we are taking the response from the fetch call and converting it into something that JavaScript can easily work with—-JSON.
+
+```jsx
+const data = await response.json();
+```
+
+Because this operation also returns a promise, we have to await the result of the promise. If the await keyword wasn’t there, the code moves to the next line without waiting for the result of the promise.
+
+If you open the console, you should see something like this:
+
+```jsx
+[
+  {
+    "gender": "male",
+    "name": { "title": "Mr", "first": "John", "last": "Doe" },
+    "email": "johndoe@example.com",
+    ...
+    // other user properties
+  },
+  {
+    "gender": "female",
+    "name": { "title": "Ms", "first": "Jane", "last": "Smith" },
+    "email": "janesmith@example.com",
+    ...
+    // other user properties
+  },
+  ...
+]
+```
+
+<br />
+### Where do I fetch data{" "}
+
+---
+
+Now that you know how to fetch data, the next
+thing to understand is where to fetch the data.
+
+Data fetching especially from an API is not something that React is responsible for.
+React’s core responsibilities involve state management, building the virtual DOM, rendering and re-rendering etc,
+but not interacting with the outside world. These operations that are not part of React’s core responsibilities are called _side effects_.
+They are things that happen _on the side_, not during the _rendering_ process of a react component.
+
+Examples of side effects
+
+- Fetching data from an API
+- Manipulating the DOM directly
+- Updating local storage or cookies
+- Setting up timers or intervals
+
+<br />
+
+**What a React component is after**
+
+The goal of React is to ensure that the rendering process of components remains pure.
+In other words, it ensures that the component relies solely on its props and state to determine its output.
+It wants to ensure that nothing comes in between the rendering process. Input must be equal to output.
+
+Unfortunately, side effects are a threat to React components being pure. Why?
+
+Side effects are are major threat to a component’s purity because they could modify state and make the rendering process unpredictable.
+In other words, input may no longer be equal to output.
+
+<br />
+
+**The Solution**
+
+To avoid this, React provides a hook called useEffect, that allows you write any kind of side effect in your application.
+The goal of this is to run the side effect after the rendering process remains
+
+The useEffect hook allows you to synchronize a component with an external system.
+In other words, you’re trying to do something on the outside world of React and bring it into React.
+
+Here’s the syntax of the useEffect hook:
+
+```jsx
+useEffect(() => {}, []);
+```
+
+- () ⇒ {} represents the function that the hook should help you run
+- [] represents a dependency array. This array holds values that you referenced in the function you wrote inside the hook. They are called reactive values. Reactive values include props, state, and all the variables and functions declared directly inside your component body.
+- For now, we would be leaving the dependency array empty. If your Effect doesn’t use any reactive values, it will only run after the initial render of the component.
+
+<br />
+Let’s update our code with all we’ve learnt.
+
+```jsx
+import { useState, useEffect } from "react";
+
+export default function App() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const response = await fetch("https://randomuser.me/api/?results=10");
+      const data = await response.json();
+      setUsers(data.results);
+    };
+
+    fetchUsers();
+  }, []);
+
+  return <div></div>;
+}
+```
+
+We’re almost done with our code.
+
+Here’s what we are doing so far:
+
+- We’re fetching data from an external API.
+- Because it’s a side effect, we’re we wrote the code inside the useEffect hook.
+- The useEffect hook, makes a request to the data, and awaits the result because it’s a promise.
+- Next, we convert the response to JSON format by using the .json() method. Because this is also a promise, we await the result of the operation.
+- Next, we update our users state array with the results.
+
+<br />
+### Now that we have our data
+
+---
+
+Finally, we have our data. The next step is to display the data in our JSX. Go ahead and try this yourself.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+If you didn’t get it, I’m sure you tried. Here’s how we can display our data in our JSX.
+
+```jsx
+import { useState, useEffect } from "react";
+
+export default function App() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const response = await fetch("https://randomuser.me/api/?results=10");
+      const data = await response.json();
+      setUsers(data.results);
+    };
+
+    fetchUsers();
+  }, []);
+
+  return (
+    <div>
+      <h1>Random Users</h1>
+      <ul>
+        {users.map((user, index) => (
+          <li key={index}>
+            <img src={user.picture.thumbnail} alt={user.name.first} />
+            <p>{`${user.name.first} ${user.name.last}`}</p>
+            <p>{user.email}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+<br />
+There you have it! You have successfully learnt the basics of data fetching in a
+React component. I hope you enjoyed the article. Kindly share the article to
+others if you did. Till next time. Thank you!
+
+### What to do after
+
+Here are a few things you can try after reading this article:
+
+- Our styling can look more beautiful. Try adding styles with CSS or your favorite library.
+- Try displaying the data inside a table.
+- Try creating an input that allows you select the amount of users to be requested.
