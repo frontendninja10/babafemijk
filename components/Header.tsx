@@ -6,6 +6,8 @@ import { HeroSvg } from "@/components/HeroSvg";
 import { Open_Sans } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
 import { Karla } from "next/font/google";
+import HeroIcons from "./HeroIcons";
+import { GeistMono } from "geist/font/mono";
 
 // import { ScaleButton } from "./animations/animations";
 
@@ -17,12 +19,12 @@ const openSans = Open_Sans({
 export default async function Header() {
   const profile: ProfileType[] = await getProfile();
   return (
-    <header className="max-w-6xl font-karla lg:pt-52 lg:pb-32 pt-32 mx-auto px-6 flex flex-col lg:flex-row lg:p-0 lg:items-center lg:justify-between dark:text-white">
+    <header className="max-w-6xl font-karla lg:pt-52 lg:pb-44 pt-32 mx-auto px-6 flex flex-col lg:flex-row lg:p-0 lg:items-center lg:justify-between dark:text-white">
       {profile &&
         profile.map((data) => (
-          <div key={data._id} className="max-w-2xl">
+          <div key={data._id} className="max-w-3xl">
             <h1
-              className={`text-4xl text-[#1d2f6f] font-semibold tracking-normal lg:text-6xl mb-6 lg:leading-20 lg:min-w-[400px] min-w-full dark:text-slateBlue`}
+              className={`text-4xl ${GeistMono.className} text-slate-500 font-bold tracking-normal lg:text-7xl mb-6 lg:leading-20 lg:min-w-[450px] min-w-full dark:text-slateBlue`}
             >
               Frontend Software Engineer & Tech Writer
             </h1>
@@ -47,7 +49,7 @@ export default async function Header() {
                       className="flex items-center border-b dark:border-b-zinc-800 border-zinc-200 group dark:text-[#6a5acd]"
                     >
                       <value.icon
-                        className="flex-shrink-0 h-5 w-5 text-[#1d2f6f] group-hover:dark:text-white group-hover:text-zinc-800 duration-300 dark:text-[#6a5acd]"
+                        className="flex-shrink-0 h-5 w-5 text-slate-500 group-hover:dark:text-white group-hover:text-zinc-800 duration-300 dark:text-[#6a5acd]"
                         aria-hidden="true"
                       />{" "}
                       &nbsp;
@@ -59,7 +61,8 @@ export default async function Header() {
           </div>
         ))}
       <div className="lg:max-w-[377px] max-w-[320px] self-center">
-        <HeroSvg />
+        {/* <HeroSvg /> */}
+        <HeroIcons />
         {/* <HeroSvg2 /> */}
       </div>
     </header>
