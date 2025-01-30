@@ -30,7 +30,7 @@ export function BlogPosts() {
     <div className="mt-20">
       {sortedYears.map((year) => (
         <div key={year} className="mb-8">
-          <h3 className="text-md font-bold text-left text-[#1d2f6f] dark:text-paleLavender mb-4 mt-6 max-w-[100%] lg:max-w-[70%] mx-auto">
+          <h3 className="text-md font-bold text-left text-[#1d2f6f] dark:text-paleLavender mb-4 mt-6 max-w-[100%] lg:max-w-[63%] mx-auto">
             {year}
           </h3>
           {groupedPosts[year]
@@ -47,9 +47,9 @@ export function BlogPosts() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="w-full flex items-center gap-2 dark:text-paleLavender border-b-[1px] pb-1 border-paleLavender mb-4 max-w-[100%] lg:max-w-[70%] mx-auto transition-transform duration-200 hover:scale-[1.02]"
+                className="w-full flex items-center gap-2 lg:gap-6 dark:text-paleLavender border-b-[1px] pb-1 border-paleLavender mb-4 max-w-[100%] lg:max-w-[63%] mx-auto transition-transform duration-200 hover:scale-[1.02]"
               >
-                <p className="text-[#1d2f6f] text-sm font-semibold tabular-nums dark:text-paleLavender w-[55px] lg:w-[90px] shrink-0 text-left">
+                <p className="text-[#1d2f6f] text-sm font-semibold tabular-nums dark:text-paleLavender w-[55px] lg:w-[60px] shrink-0 text-left">
                   {formatDate(post.metadata.publishedAt, false)}
                 </p>
                 <p className="text-slate-700 dark:text-paleLavender whitespace-nowrap overflow-hidden text-ellipsis">
