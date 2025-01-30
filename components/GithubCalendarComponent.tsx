@@ -3,7 +3,7 @@ import { GeistMono } from "geist/font/mono";
 
 export default function GithubCalendarComponent() {
   return (
-    <section className="lg:my-60 mt-16 max-w-6xl mx-auto px-6">
+    <section className="lg:my-60 lg:mt-96 mt-36 max-w-6xl mx-auto px-6">
       <h2
         className={`font-bold ${GeistMono.className} lg:text-4xl text-3xl mb-4 text-slate-500 dark:text-slateBlue`}
       >
