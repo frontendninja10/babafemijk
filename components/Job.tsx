@@ -5,6 +5,7 @@ import type { JobType } from "@/types";
 import { formatDate } from "@/lib/date";
 import { GeistSans } from "geist/font/sans";
 import { jobQuery } from "@/sanity/sanity.query";
+import { GeistMono } from "geist/font/mono";
 
 // export const revalidate = 10;
 
@@ -23,7 +24,9 @@ export default async function Job() {
   return (
     <section className="lg:mt-28 mt-16 max-w-6xl mx-auto px-6">
       <div className="mb-16">
-        <h2 className="font-semibold lg:text-4xl text-3xl mb-4 text-[#1d2f6f] dark:text-slateBlue">
+        <h2
+          className={`font-bold ${GeistMono.className} lg:text-4xl text-3xl mb-4 text-slate-500 dark:text-slateBlue`}
+        >
           Work Experience
         </h2>
       </div>
@@ -49,11 +52,15 @@ export default async function Job() {
                 />
               </a>
               <div className="flex flex-col items-start">
-                <h3 className="text-xl font-bold text-[#161960] dark:text-slateBlue">
+                <h3
+                  className={`text-xl ${GeistMono.className} font-bold text-slate-500 dark:text-slateBlue`}
+                >
                   {data.name}
                 </h3>
-                <p className="dark:text-paleLavender">{data.jobTitle}</p>
-                <time className="text-sm text-zinc-500 mt-2 tracking-wider uppercase dark:text-paleLavender">
+                <p className="dark:text-paleLavender text-slate-500">
+                  {data.jobTitle}
+                </p>
+                <time className="text-sm text-slate-500 mt-2 tracking-wider uppercase dark:text-paleLavender">
                   {formatDate(data.startDate)} -{" "}
                   {data.endDate ? (
                     formatDate(data.endDate)
