@@ -24,7 +24,7 @@ export default async function Header() {
         profile.map((data) => (
           <div key={data._id} className="max-w-[49rem]">
             <h1
-              className={`text-[32px] ${GeistMono.className} text-slate-500 font-bold tracking-normal lg:text-7xl mb-6 lg:leading-20 lg:min-w-[450px] min-w-full dark:text-slateBlue`}
+              className={`text-[32px] ${GeistMono.className} text-slate-500 font-semibold tracking-normal lg:text-7xl mb-6 lg:leading-20 lg:min-w-[450px] min-w-full dark:text-slateBlue`}
             >
               Frontend Engineer, <br /> Technical Writer.
             </h1>
