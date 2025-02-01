@@ -66,7 +66,7 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
   return (
     <div className="parallax">
       <motion.div
-        className={`scroller ${GeistMono.className} text-slate-400 dark:text-slateBlue`}
+        className={`scroller ${GeistMono.className} text-slate-500 dark:text-slateBlue`}
         style={{ x }}
       >
         <span className="text-[38px] lg:text-[72px]">{children} </span>
