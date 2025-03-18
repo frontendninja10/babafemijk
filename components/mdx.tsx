@@ -11,6 +11,8 @@ import Editable from "./blog/react-state-mgt/Editable";
 import ExampleWithState from "./blog/react-state-mgt/ExampleWithState";
 import WeeklyFrontendGoals from "./blog/react-state-mgt/WeeklyFrontendGoals";
 import Quiz from "./blog/react-state-mgt/Quiz";
+import rehypeStarryNight from "rehype-starry-night";
+import SharePost from "./SharePost";
 
 function Table({ data }: any) {
   let headers = data.headers.map((header: any, index: any) => (
@@ -56,12 +58,33 @@ function RoundedImage(props: any) {
   return <Image alt={props.alt} className="rounded-lg" {...props} />;
 }
 
-async function Code({ children, ...props }: any) {
-  let codeHTML = await codeToHtml(children, {
-    lang: "ts",
-    theme: "nord",
+// async function Code({ children, ...props }: any) {
+//   let codeHTML = await codeToHtml(children, {
+//     lang: "ts",
+//     theme: "aurora-x",
+//   });
+//   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
+// }
+
+async function Code({
+  children,
+  className,
+}: {
+  children: string;
+  className?: string;
+}) {
+  const lang = className?.replace("language-", "") || "tsx";
+  const codeHTML = await codeToHtml(children.trim(), {
+    lang,
+    theme: "catppuccin-frappe",
   });
-  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
+
+  return (
+    <pre
+      dangerouslySetInnerHTML={{ __html: codeHTML }}
+      className="shiki-wrapper"
+    />
+  );
 }
 
 function slugify(str: any) {
@@ -106,11 +129,17 @@ let components = {
     h5: createHeading(5),
     h6: createHeading(6),
   },
+
   custom: {
     Image: RoundedImage,
     a: CustomLink,
-    code: Code,
     Table,
+    pre: (props: any) => <>{props.children}</>, // Prevent MDX from wrapping in <pre>
+    code: (props: any) => {
+      const { children, className } = props;
+      if (!className) return <code {...props}>{children}</code>; // Handle inline code
+      return <Code className={className}>{children}</Code>;
+    },
   },
   blog: {
     BlogPosts,
@@ -120,6 +149,7 @@ let components = {
     ExampleWithState,
     WeeklyFrontendGoals,
     Quiz,
+    SharePost,
   },
   sandpack: Sandpack,
 };
