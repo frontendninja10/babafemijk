@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+/* app/globals.css */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-okaidia.min.css");
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -43,6 +45,17 @@
   body {
     @apply dark:bg-[#0b0c1f];
   }
+
+  .shiki-wrapper {
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+  /* 
+  .shiki {
+    background: none !important;
+  } */
 
   .dark {
     --background: 222.2 84% 4.9%;
@@ -136,7 +149,7 @@
 }
 
 .prose p {
-  @apply my-4 text-slate-600 dark:text-paleLavender;
+  @apply my-2 text-slate-600 dark:text-paleLavender;
 }
 
 .prose h1 {
@@ -168,7 +181,6 @@
 }
 
 .prose > :first-child {
-  /* Override removing top margin, causing layout shift */
   margin-top: 1.25em !important;
   margin-bottom: 1.25em !important;
 }
@@ -176,11 +188,13 @@
 .prose code {
   font-family: "Fira Code", monospace;
   font-size: 14px;
+  /* padding: 0; */
 }
 
 .prose pre {
   @apply py-3 px-6;
-  background-color: #334155;
+  /* padding: 0;
+  margin: 0; */
 }
 
 pre::-webkit-scrollbar {
@@ -188,8 +202,8 @@ pre::-webkit-scrollbar {
 }
 
 pre {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Remove Safari input shadow on mobile */

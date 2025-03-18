@@ -34,7 +34,7 @@ export default function RootLayout({
       <body className={`${karla.className} bg-slate-100`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
