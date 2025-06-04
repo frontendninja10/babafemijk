@@ -1,5 +1,4 @@
 import { BlogPosts } from "@/components/BlogPosts";
-import { FlaskConical } from "lucide-react";
 
 export const metadata = {
   title: "Blog",
@@ -15,7 +14,6 @@ export default function Blog() {
         >
           Articles{" "}
         </h1>
-        {/* <FlaskConical className="w-5 h-5 text-gray-500 animate-tilt" /> */}
         <p
           className={`text-base text-slate-500 leading-relaxed mb-7 dark:text-paleLavender`}
         >

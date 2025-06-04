@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
-import { formatDate, getBlogPosts } from "../utils";
+import { formatDate, getBlogPosts, calculateReadingTime } from "../utils";
 import { baseUrl } from "../../sitemap";
 import { MoveLeft } from "lucide-react";
 import Link from "next/link";
@@ -61,7 +61,7 @@ export default function Blog({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <section className="py-10 lg:mt-20 max-w-4xl mx-auto mt-20 px-4 lg:px-0 h-full">
+    <section className="py-10 font-karla lg:mt-20 max-w-4xl mx-auto mt-20 px-4 lg:px-0 h-full">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -91,14 +91,32 @@ export default function Blog({ params }: { params: { slug: string } }) {
         <MoveLeft className="w-4 h-4" />
         <p className="text-sm">Back to all articles</p>
       </Link>
-      <h1 className="title font-semibold text-[#132052] lg:text-3xl text-2xl tracking-tighter dark:text-white">
+      <h1 className="title mb-8 font-semibold text-[#132052] lg:text-4xl text-2xl tracking-tight dark:text-white">
         {post.metadata.title}
       </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+
+      <div className="flex gap-4 items-center mt-2 my-4 text-sm">
         <p className="text-sm text-neutral-600 dark:text-paleLavender">
-          {formatDate(post.metadata.publishedAt)}
+          {formatDate(post.metadata.publishedAt, true)}
+        </p>
+        {"|"}
+        <p className="text-slate-700 dark:text-paleLavender text-sm whitespace-nowrap">
+          {calculateReadingTime(post.content)} min{" "}
+          <span className="hidden lg:inline-block">read</span>
         </p>
       </div>
+      {post.metadata.tags && (
+        <div className="flex flex-wrap gap-2 mb-10">
+          {post.metadata.tags.map((tag: string) => (
+            <span
+              key={tag}
+              className="px-2 text-neutral-600 py-1 capitalize bg-slate-200 text-xs dark:bg-slateBlue dark:text-white"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
       <article className="prose lg:prose-md max-w-none prose-slate dark:prose-invert">
         <CustomMDX source={post.content} />
       </article>

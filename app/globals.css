@@ -177,7 +177,7 @@
 }
 
 .prose ol {
-  @apply list-decimal pl-6 dark:text-paleLavender;
+  @apply list-decimal text-slate-600 pl-6 dark:text-paleLavender;
 }
 
 .prose > :first-child {
