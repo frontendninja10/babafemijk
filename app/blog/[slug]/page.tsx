@@ -25,6 +25,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
     summary: description,
     image,
   } = post.metadata;
+
   let ogImage = image
     ? image
     : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
