@@ -1,0 +1,158 @@
+---
+title: "Typed and Tested: My TypeScript Learning Journey"
+publishedAt: "2025-05-29"
+summary: "React Hook Form is a library that simplifies form handling in React. It handles form state efficiently, reduces unnecessary re-renders, and makes validation seamless."
+coverImage: "https://res.cloudinary.com/dezx6ryl0/image/upload/c_pad,b_gen_fill,ar_4:3/v1748549778/didin-emelu-8--kuxbxuKU-unsplash_zr1fdt.jpg"
+url: "https://babafemijkuku.com/blog/typed-and-tested"
+tags: ["typescript", "learning"]
+---
+
+import Image from "next/image";
+import SharePost from "@/components/SharePost";
+
+<Image
+  src="https://res.cloudinary.com/dezx6ryl0/image/upload/c_pad,b_gen_fill,ar_4:3/v1748549778/didin-emelu-8--kuxbxuKU-unsplash_zr1fdt.jpg"
+  alt="Cover Image"
+  width={850}
+  height={400}
+  style={{ maxWidth: "100%", height: "auto" }}
+  priority
+  className="mx-auto"
+/>
+
+### _Introduction_
+
+My journey with TypeScript began in late 2022 when I started learning how to build frontend applications with Next.js. I had put off learning it the previous year—partly because it seemed like overkill, and partly because JavaScript was working “just fine”.
+But when I finally decided to switch from plain React to a full framework, I stumbled on the official “Learn Next.js” course—and it happened to be written in TypeScript. I thought, “Well… I guess it’s time to finally give this a try. Nextjs + TypeScript. Let’s gooo!!!”
+
+### _Hooked by its Neatness, Unsure of its Power_
+
+So I began, and honestly, I didn’t really understand the hype. People kept saying how TypeScript helped them catch bugs early, made their code more reliable, all of that. But in my early experience, what stood out wasn’t the bug-catching—it was how neat and structured my code suddenly looked. And for someone like me who really values clean code, that was enough to keep me curious.
+But I couldn’t help wondering: was aesthetically pleasing code all there was to this language? Where were these magical bug-catching powers I’d heard so much about? It felt like I was at a TypeScript party and everyone else was celebrating except me. 😕
+
+Frustrated but curious, I turned to ChatGPT. I’d paste chunks of TypeScript and demand: ‘Explain this like I’m five. Do these types even matter? Why is this better than what I was doing before?’ The answers made sense—in theory. But in practice? I still didn’t feel the magic. TypeScript and I were stuck in a one-sided relationship: it was trying to protect me from myself, but I was stuck between ‘this seems important’ and ‘but I don’t get why yet’ - the classic developer struggle.
+
+> Lesson One✅:
+> You don’t have to fall in ‘love’ with TypeScript right away. Not seeing its value immediately doesn’t mean it's not there.
+
+### _When Things Started to Click_
+
+My deep appreciation for TypeScript came when I landed my first full-time frontend engineer role in May 2024. I was excited and overwhelmed at the same time. As the sole frontend engineer, I was handed the keys to a massive, enterprise-level codebase. You know, the kind with layers of folders, dozens of files, and interconnected React components scattered like puzzle pieces across the app.
+I remember opening the repo and thinking: How was I going to navigate through the dozens of folders and files, and even more, make changes and add new features to the code without breaking something. How was I supposed to refactor a function or core React component that was used in several places across the codebase? Thankfully, the code was written in TypeScript to a good extent.
+
+How did this save me??? 🙅🏽‍♂️
+
+Each time I had to refactor a function, or component’s props, TypeScript would light up like a GPS and point me to references in the codebase where the function, or component was used making it easy for me to update them. If I missed a required field, or passed in the wrong type, or forgot to handle undefined–I would get a warning from TypeScript. 🚫
+
+I could follow data flows through interfaces, jump to type definitions and study how a function was supposed to behave. It was like having a second pair of eyes constantly watching my back.
+Within a few months, I had already started adding type definitions to untyped components, utility functions, and API responses, which helped me see the benefits especially during code refactoring. Knowing how my components, functions, and variables were supposed to behave before shipping code was a big win for me!
+
+If there was one thing I learned from that experience, it’s this:
+TypeScript was built for scale. In small projects, its value might feel subtle–but in large codebases, it becomes your guide, your guardrail and your most loyal teammate. For me, this was the first real taste of its power–and I haven’t looked back since.
+
+Here’s a portion from the official TypeScript [website](https://www.typescriptlang.org/why-create-typescript/#:~:text=One%20of%20the%20tag%2Dlines,the%20rest%20of%20the%20program.):
+
+> One of the tag-lines for TypeScript is "JavaScript which scales" which is a statement that these extra type annotations allow you to work on bigger projects. This is because you can verify up-front how correct your code is. This means you have less need to understand how every change affects the rest of the program.
+
+So here's my second key takeaway from TypeScript:
+
+> Lesson Two✅:
+> The bigger the codebase, the brighter TypeScript shines.
+
+### _Learning to Trust TypeScript_
+
+In my early days with TypeScript, I felt I needed to type everything. Every function, variable, prop. I thought that was the whole point–if it’s not typed explicitly, it's not TypeScript right? 🤷🏽‍♂️
+
+I had a tendency to add types to some things like this:
+
+```ts
+// I used to manually annotate every object, even when unnecessary
+const ninja: { name: string; stealthLevel: number } = {
+  name: "Crane",
+  stealthLevel: 95,
+};
+
+// But TypeScript already knows the shape of this object from the value on the right
+// So I could have just written:
+const ninja = { name: "Crane", stealthLevel: 95 };
+```
+
+Looking back, this was an overkill–but I didn’t know better. I didn’t just trust TypeScript to figure it out on its own. Overtime, I noticed: the best TypeScript code didn’t have explicit types everywhere, it had types where it mattered. TypeScript was smart enough to infer the types of variables from their values, or function return types. I didn’t have to clutter my code with redundant annotations. It took time, but I eventually learned to trust TypeScript’s intelligence. It’s like a brilliant assistant that fills the gap when you guide it, but doesn’t need micromanaging.
+
+> Lesson Three✅:
+> It’s not about adding types everywhere — it’s about guiding the system just enough, and letting it do the rest.
+
+✋ **Quick Note:**
+Explicit typing isn’t bad at all—in fact, in many cases it’s necessary and even encouraged.
+For example, when designing public APIs, defining function signatures, or working with complex objects where clarity is key, writing out your types can make your code more readable and predictable for both you and your team.
+
+At the end of the day, how much you type explicitly often comes down to preference, project needs, and team conventions.
+Some teams lean into full explicit typing for clarity and consistency. Others prefer a lighter touch and rely more on inference to keep the code lean.
+
+Neither approach is wrong — the key is knowing when and why to be explicit, and trusting TypeScript to handle the rest intelligently.
+
+### _TypeScript Isn’t a Safety Net for Everything_
+
+TypeScript’s superpowers are undeniable—but it’s not a silver bullet.
+If you’re just picking up TypeScript and have gotten the hang of it, you have types where they matter, it’s helping you spot mistakes, and all of those good stuff. You might be thinking, “Okay, my code is bulletproof now.” 😎
+
+Well, spoiler alert. It isn’t.
+
+Here’s another major lesson I learnt while using TypeScript.
+
+Having types in your code does not guarantee 100% error-free code. This is because beyond semantic and syntax errors, there are errors that could arise as a result of wrong logic or calculation. TypeScript can’t help you here.
+For example, in a feature implementation, I was supposed to call an endpoint based on a condition, but somehow, I mixed it up. I called the endpoint based on an opposite condition. 🙈
+
+Here’s an example:
+
+```ts
+// ✅ Expected implementation
+if (isUserVerified) {
+  callEndpointA();
+} else {
+  callEndpointB();
+}
+```
+
+```ts
+// ❌ Buggy implementation
+if (isUserVerified) {
+  callEndpointB();
+} else {
+  callEndpointA();
+}
+```
+
+Both blocks are syntactically valid and type-safe. TypeScript has no way of knowing that you swapped the logic. It’s a logical error, not a type error — and it can slip into production if you’re not careful.
+TypeScript helps you avoid an entire class of bugs — things like incorrect function usage, mistyped props, wrong return values — but it can’t guard against all mistakes. Especially the ones rooted in logic or incomplete thinking.
+
+> Lesson Four✅:
+> TypeScript brings structure and safety, but logic is still your responsibility.
+
+### _Final Thoughts_
+
+Mastering TypeScript isn’t something that happens in a day—just like any skill worth learning. There will be types that don’t make sense at first, and cryptic error messages that make you feel like you're starting from scratch. That’s normal.
+
+But if you commit to learning intentionally and keep practicing, you’ll be surprised how far you can go—and how much more confident you’ll become.
+
+Below are some of the resources that helped me grow with TypeScript. Hopefully, they’ll help you too. 🚀
+
+1. [_**TypeScript Handbook (Official)**_](https://www.typescriptlang.org/docs/handbook/intro.html): I love how it explains things from first principles. It helped me understand not just how to write types, but why TypeScript was built in the first place.
+2. [_**TotalTypeScript**_](https://www.totaltypescript.com/): I regard Matt Pocock as one of the best TypeScript educators out there. His website contains free byte-sized TypeScript lessons that are not only easy to understand but contains a huge amount of challenges to help you put skills to the test.
+3. [_**React TypeScript Cheatsheet**_](https://react-typescript-cheatsheet.netlify.app/): This is a beautiful combination of how to use TypeScript in React. I love the simplicity and detailed examples.
+4. [_**Type Challenges**_](https://tsch.js.org/): I recently discovered this some weeks ago. There are easy, medium, hard and extreme challenges you can attempt. And I love that you can add it as an extension in VS Code, so you can test your skills without having to leave your editor.
+
+<br />
+Thanks for reading. See you in the next one! 🥂
+
+<br />
+
+<br />
+
+<br />
+
+<SharePost
+  url={`http://babafemijkuku.com/blog/typed-and-tested`}
+  title={`Typed and Tested`}
+  gifLink="https://giphy.com/embed/D1YwKAqQGTysemFJ9E"
+/>

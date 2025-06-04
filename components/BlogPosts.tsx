@@ -4,12 +4,10 @@ import {
   formatDate,
   getBlogPosts,
 } from "@/app/blog/utils";
-import { ChevronRight, Dot } from "lucide-react";
 
 export function BlogPosts() {
   let allBlogs = getBlogPosts();
   // console.log(allBlogs);
-  // Group posts by year
   const groupedPosts = allBlogs.reduce(
     (groups: { [key: string]: typeof allBlogs }, post) => {
       const year = new Date(post.metadata.publishedAt).getFullYear().toString();
@@ -55,6 +53,7 @@ export function BlogPosts() {
                 <p className="text-slate-700 dark:text-paleLavender whitespace-nowrap overflow-hidden text-ellipsis">
                   {post.metadata.title}
                 </p>
+
                 <p className="text-slate-700 dark:text-paleLavender text-sm ml-auto whitespace-nowrap">
                   {calculateReadingTime(post.content)} min{" "}
                   <span className="hidden lg:inline-block">read</span>

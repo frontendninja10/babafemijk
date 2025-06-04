@@ -14,9 +14,14 @@ import { Button } from "@/components/ui/button";
 interface ShareButtonsProps {
   url: string;
   title: string;
+  gifLink?: string;
 }
 
-const ShareButtons = ({ url, title }: ShareButtonsProps) => {
+const ShareButtons = ({
+  url,
+  title,
+  gifLink = "https://giphy.com/embed/6WoPOewVHFrQTK6uEz",
+}: ShareButtonsProps) => {
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
   const [isCopied, setIsCopied] = useState(false);
@@ -46,7 +51,7 @@ const ShareButtons = ({ url, title }: ShareButtonsProps) => {
         }}
       >
         <iframe
-          src="https://giphy.com/embed/6WoPOewVHFrQTK6uEz"
+          src={gifLink}
           width="100%"
           height="100%"
           style={{
@@ -57,11 +62,11 @@ const ShareButtons = ({ url, title }: ShareButtonsProps) => {
           allowFullScreen
         ></iframe>
       </div>
-      <p style={{ textAlign: "center", marginBottom: "40px" }}>
+      {/* <p style={{ textAlign: "center", marginBottom: "40px" }}>
         <a href="https://giphy.com/gifs/lilpotates-lilpotate-lil-potate-6WoPOewVHFrQTK6uEz">
           via GIPHY
         </a>
-      </p>
+      </p> */}
       <div className="flex gap-4 justify-center items-center">
         <Link
           href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`}
@@ -70,13 +75,13 @@ const ShareButtons = ({ url, title }: ShareButtonsProps) => {
         >
           <FaTwitter className="text-xl text-[#132052]" />
         </Link>
-        <Link
+        {/* <Link
           href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaFacebook className="text-xl text-[#132052]" />
-        </Link>
+        </Link> */}
         {/* <Link
           href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
           target="_blank"
